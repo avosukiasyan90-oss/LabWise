@@ -1,0 +1,505 @@
+import 'lab_knowledge.dart';
+
+/// Complete Blood Count markers (assay-code based).
+class CbcCatalog {
+  static final List<LabKnowledge> all = [
+    LabKnowledge(
+      id: 'wbc',
+      name: 'White Blood Cells (WBC)',
+      assayCodes: const ['WBC'],
+      namePatterns: [
+        RegExp(r'total number of leucocytes|white\s*blood\s*cells?',
+            caseSensitive: false),
+      ],
+      information: 'WBC count reflects immune activity and infection response.',
+      description: 'Part of a complete blood count used to screen immune status.',
+      normalSuggestion: 'No special action if you feel well.',
+      lowSuggestion:
+          'Low WBC can raise infection risk — rest and ask your clinician if it continues.',
+      highSuggestion:
+          'High WBC may reflect infection, stress, or inflammation — seek advice if unwell.',
+      mgDl: const LabRanges(
+        low: 4.0,
+        high: 10.5,
+        referenceRange: '4.0–10.5 ×10⁹/L',
+        unit: '×10⁹/L',
+      ),
+    ),
+    LabKnowledge(
+      id: 'rbc',
+      name: 'Red Blood Cells (RBC)',
+      assayCodes: const ['RBC'],
+      namePatterns: [
+        RegExp(r'total number of erythrocytes|red\s*blood\s*cells?',
+            caseSensitive: false),
+      ],
+      information: 'RBC count shows how many red cells carry oxygen in blood.',
+      description: 'Interpreted with hemoglobin and hematocrit.',
+      normalSuggestion: 'Keep balanced nutrition and hydration.',
+      lowSuggestion:
+          'Low RBC may relate to anemia — discuss iron/B12 and causes with your clinician.',
+      highSuggestion:
+          'High RBC can relate to dehydration or other conditions — follow up if persistent.',
+      mgDl: const LabRanges(
+        low: 4.7,
+        high: 6.0,
+        referenceRange: '4.7–6.0 ×10¹²/L',
+        unit: '×10¹²/L',
+      ),
+    ),
+    LabKnowledge(
+      id: 'hemoglobin',
+      name: 'Hemoglobin',
+      assayCodes: const ['HGB', 'HB'],
+      namePatterns: [
+        RegExp(r'hemoglobin concentration|\bhemoglobin\b|\bhgb\b',
+            caseSensitive: false),
+      ],
+      information: 'Hemoglobin carries oxygen in red blood cells.',
+      description: 'A core CBC marker for anemia and oxygen-carrying capacity.',
+      normalSuggestion: 'Keep iron-rich nutrition and good hydration.',
+      lowSuggestion:
+          'Discuss possible anemia evaluation with your clinician.',
+      highSuggestion:
+          'Hydrate and ask your clinician if high hemoglobin persists.',
+      mgDl: const LabRanges(
+        low: 13.5,
+        high: 18.0,
+        referenceRange: '13.5–18 g/dL',
+        unit: 'g/dL',
+      ),
+    ),
+    LabKnowledge(
+      id: 'hct',
+      name: 'Hematocrit',
+      assayCodes: const ['HCT'],
+      namePatterns: [RegExp(r'\bhematocrit\b', caseSensitive: false)],
+      information: 'Hematocrit is the percentage of blood made up of red cells.',
+      description: 'Moves with hemoglobin and hydration status.',
+      normalSuggestion: 'Usually no action needed when in range.',
+      lowSuggestion: 'Low hematocrit can accompany anemia — clinical review is useful.',
+      highSuggestion: 'High hematocrit may need hydration and clinical context.',
+      mgDl: const LabRanges(
+        low: 42,
+        high: 52,
+        referenceRange: '42–52%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'mcv',
+      name: 'MCV',
+      assayCodes: const ['MCV'],
+      namePatterns: [
+        RegExp(r'average volume of erythrocytes|\bmcv\b', caseSensitive: false),
+      ],
+      information: 'MCV is the average size of red blood cells.',
+      description: 'Helps classify anemia types (microcytic vs macrocytic).',
+      normalSuggestion: 'No special action when MCV is in range.',
+      lowSuggestion:
+          'Low MCV can relate to iron deficiency — discuss with your clinician.',
+      highSuggestion:
+          'High MCV can relate to B12/folate issues or other causes — ask for review.',
+      mgDl: const LabRanges(
+        low: 78,
+        high: 100,
+        referenceRange: '78–100 fL',
+        unit: 'fL',
+      ),
+    ),
+    LabKnowledge(
+      id: 'mch',
+      name: 'MCH',
+      assayCodes: const ['MCH'],
+      namePatterns: [
+        RegExp(r'average volume of hemoglobin in an erythrocyte|\bmch\b',
+            caseSensitive: false),
+      ],
+      information: 'MCH is the average amount of hemoglobin per red cell.',
+      description: 'Reviewed with MCV and MCHC in CBC panels.',
+      normalSuggestion: 'Keep consistent nutrition habits.',
+      lowSuggestion: 'Low MCH often tracks with iron-related anemia patterns.',
+      highSuggestion: 'High MCH should be interpreted with other red-cell indices.',
+      mgDl: const LabRanges(
+        low: 27,
+        high: 31,
+        referenceRange: '27–31 pg',
+        unit: 'pg',
+      ),
+    ),
+    LabKnowledge(
+      id: 'mchc',
+      name: 'MCHC',
+      assayCodes: const ['MCHC'],
+      namePatterns: [
+        RegExp(
+            r'average concentration of hemoglobin in an erythrocyte|\bmchc\b',
+            caseSensitive: false),
+      ],
+      information:
+          'MCHC is the average hemoglobin concentration inside red cells.',
+      description: 'Useful with other CBC indices for anemia workups.',
+      normalSuggestion: 'No special action when in range.',
+      lowSuggestion: 'Low MCHC can appear in some anemia types — clinical review helps.',
+      highSuggestion: 'High MCHC is less common and needs clinician context.',
+      mgDl: const LabRanges(
+        low: 32,
+        high: 36,
+        referenceRange: '32–36 g/dL',
+        unit: 'g/dL',
+      ),
+    ),
+    LabKnowledge(
+      id: 'platelets',
+      name: 'Platelets',
+      assayCodes: const ['PLT'],
+      namePatterns: [
+        RegExp(r'\bplatelet\b|\bplatelets\b|\bplt\b', caseSensitive: false),
+      ],
+      information: 'Platelets help your blood clot after injury.',
+      description: 'Abnormal levels can affect bleeding or clotting risk.',
+      normalSuggestion: 'Continue routine care unless symptoms appear.',
+      lowSuggestion:
+          'Avoid contact sports until a clinician reviews bleeding risk.',
+      highSuggestion:
+          'Stay hydrated and attend recommended follow-up testing.',
+      mgDl: const LabRanges(
+        low: 150,
+        high: 450,
+        referenceRange: '150–450 ×10⁹/L',
+        unit: '×10⁹/L',
+      ),
+    ),
+    LabKnowledge(
+      id: 'rdw_sd',
+      name: 'RDW-SD',
+      assayCodes: const ['RDW-SD'],
+      namePatterns: [
+        RegExp(r'anisocytosis index, standard deviation|rdw-sd',
+            caseSensitive: false),
+      ],
+      information: 'RDW-SD reflects variation in red blood cell size.',
+      description: 'Higher RDW can appear in mixed or early nutritional anemias.',
+      normalSuggestion: 'No action needed when RDW is stable and in range.',
+      lowSuggestion: 'Low RDW is usually not concerning alone.',
+      highSuggestion:
+          'Elevated RDW is interpreted with hemoglobin and iron/B12 status.',
+      mgDl: const LabRanges(
+        low: 36.4,
+        high: 46.3,
+        referenceRange: '36.4–46.3 fL',
+        unit: 'fL',
+      ),
+    ),
+    LabKnowledge(
+      id: 'rdw_cv',
+      name: 'RDW-CV',
+      assayCodes: const ['RDW-CV'],
+      namePatterns: [
+        RegExp(r'coefficient of variation|\brdw-cv\b', caseSensitive: false),
+      ],
+      information: 'RDW-CV is another way to express red-cell size variation.',
+      description: 'Often reviewed together with RDW-SD and hemoglobin.',
+      normalSuggestion: 'Keep balanced meals with iron, B12, and folate sources.',
+      lowSuggestion: 'Low RDW-CV alone is rarely important.',
+      highSuggestion: 'High RDW-CV may need nutritional or anemia follow-up.',
+      mgDl: const LabRanges(
+        low: 11.5,
+        high: 14.0,
+        referenceRange: '11.5–14%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'pdw',
+      name: 'PDW',
+      assayCodes: const ['PDW'],
+      namePatterns: [
+        RegExp(r'platelet anisocytosis|\bpdw\b', caseSensitive: false),
+      ],
+      information: 'PDW shows variation in platelet size.',
+      description: 'Reviewed with platelet count and MPV.',
+      normalSuggestion: 'No special action when platelets look otherwise normal.',
+      lowSuggestion: 'Low PDW is usually interpreted in full CBC context.',
+      highSuggestion: 'High PDW can accompany platelet activation or other changes.',
+      mgDl: const LabRanges(
+        low: 9,
+        high: 17,
+        referenceRange: '9–17 fL',
+        unit: 'fL',
+      ),
+    ),
+    LabKnowledge(
+      id: 'mpv',
+      name: 'MPV',
+      assayCodes: const ['MPV'],
+      namePatterns: [
+        RegExp(r'average platelet volume|\bmpv\b', caseSensitive: false),
+      ],
+      information: 'MPV is the average size of platelets.',
+      description: 'Larger platelets can appear when platelet production is active.',
+      normalSuggestion: 'Usually fine when platelet count is also normal.',
+      lowSuggestion: 'Low MPV is interpreted with the full platelet panel.',
+      highSuggestion:
+          'Slightly high MPV is common; ask your clinician if platelets are also abnormal.',
+      mgDl: const LabRanges(
+        low: 7.4,
+        high: 10.4,
+        referenceRange: '7.4–10.4 fL',
+        unit: 'fL',
+      ),
+    ),
+    LabKnowledge(
+      id: 'p_lcr',
+      name: 'P-LCR',
+      assayCodes: const ['P-LCR'],
+      namePatterns: [
+        RegExp(r'coefficient of large platelets|\bp-lcr\b', caseSensitive: false),
+      ],
+      information: 'P-LCR is the proportion of larger platelets.',
+      description: 'Supports platelet morphology assessment with MPV/PDW.',
+      normalSuggestion: 'No action needed when in range.',
+      lowSuggestion: 'Low P-LCR alone is seldom actionable.',
+      highSuggestion: 'High P-LCR is reviewed with MPV and platelet count.',
+      mgDl: const LabRanges(
+        low: 13,
+        high: 43,
+        referenceRange: '13–43%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'pct',
+      name: 'Thrombocrit (PCT)',
+      assayCodes: const ['PCT'],
+      namePatterns: [
+        RegExp(r'\bthrombocrit\b|\bpct\b', caseSensitive: false),
+      ],
+      information: 'Thrombocrit estimates platelet mass in whole blood.',
+      description: 'Used with platelet count and MPV.',
+      normalSuggestion: 'No special action when in range.',
+      lowSuggestion: 'Low PCT tracks with low platelets — clinical review if symptomatic.',
+      highSuggestion: 'High PCT is interpreted with the rest of the platelet panel.',
+      mgDl: const LabRanges(
+        low: 0.17,
+        high: 0.40,
+        referenceRange: '0.17–0.40%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'neut_pct',
+      name: 'Neutrophils %',
+      assayCodes: const ['NEUT%'],
+      namePatterns: [
+        RegExp(r'relative number of neutrophils', caseSensitive: false),
+      ],
+      information: 'Neutrophil percentage is a key infection/inflammation marker.',
+      description: 'Relative white-cell differential from CBC.',
+      normalSuggestion: 'No action needed if you feel well.',
+      lowSuggestion: 'Low neutrophils can increase infection risk — ask your clinician.',
+      highSuggestion:
+          'High neutrophils may appear with infection or stress — seek care if febrile/unwell.',
+      mgDl: const LabRanges(
+        low: 34,
+        high: 71.1,
+        referenceRange: '34–71.1%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'lymph_pct',
+      name: 'Lymphocytes %',
+      assayCodes: const ['LYMPH%'],
+      namePatterns: [
+        RegExp(r'relative number of lymphocytes', caseSensitive: false),
+      ],
+      information: 'Lymphocyte percentage reflects viral/immune activity patterns.',
+      description: 'Part of the WBC differential.',
+      normalSuggestion: 'Keep routine habits if asymptomatic.',
+      lowSuggestion: 'Low lymphocytes need clinical context with absolute counts.',
+      highSuggestion: 'High lymphocytes can appear with viral illness — monitor symptoms.',
+      mgDl: const LabRanges(
+        low: 19.3,
+        high: 51.7,
+        referenceRange: '19.3–51.7%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'mono_pct',
+      name: 'Monocytes %',
+      assayCodes: const ['MONO%'],
+      namePatterns: [
+        RegExp(r'relative number of monocytes', caseSensitive: false),
+      ],
+      information: 'Monocytes are immune cells involved in chronic inflammation response.',
+      description: 'Reviewed with absolute monocyte count.',
+      normalSuggestion: 'No special action when in range.',
+      lowSuggestion: 'Low monocytes alone are rarely significant.',
+      highSuggestion: 'High monocytes may need clinical correlation.',
+      mgDl: const LabRanges(
+        low: 4.7,
+        high: 12.5,
+        referenceRange: '4.7–12.5%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'eo_pct',
+      name: 'Eosinophils %',
+      assayCodes: const ['EO%'],
+      namePatterns: [
+        RegExp(r'relative number of eosinophils', caseSensitive: false),
+      ],
+      information: 'Eosinophils can rise with allergy, asthma, or parasitic issues.',
+      description: 'Relative eosinophil share in the differential.',
+      normalSuggestion: 'No action needed when in range.',
+      lowSuggestion: 'Low eosinophils are usually not concerning.',
+      highSuggestion:
+          'High eosinophils may relate to allergy/inflammation — discuss if symptomatic.',
+      mgDl: const LabRanges(
+        low: 0.7,
+        high: 5.8,
+        referenceRange: '0.7–5.8%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'baso_pct',
+      name: 'Basophils %',
+      assayCodes: const ['BASO%'],
+      namePatterns: [
+        RegExp(r'relative number of basophils', caseSensitive: false),
+      ],
+      information: 'Basophils are a small WBC group involved in allergic responses.',
+      description: 'Usually low in healthy CBC differentials.',
+      normalSuggestion: 'No special action when in range.',
+      lowSuggestion: 'Low basophils are typically unimportant.',
+      highSuggestion: 'High basophils should be reviewed with your clinician.',
+      mgDl: const LabRanges(
+        low: 0.0,
+        high: 2.0,
+        referenceRange: '0.0–2.0%',
+        unit: '%',
+      ),
+    ),
+    LabKnowledge(
+      id: 'neut_abs',
+      name: 'Neutrophils (absolute)',
+      assayCodes: const ['NEUT#'],
+      namePatterns: [
+        RegExp(r'absolute neutrophil count', caseSensitive: false),
+      ],
+      information: 'Absolute neutrophil count is more informative than percentage alone.',
+      description: 'Important for infection-risk assessment.',
+      normalSuggestion: 'No action needed if you feel well.',
+      lowSuggestion: 'Low absolute neutrophils need prompt clinical advice if febrile.',
+      highSuggestion: 'High absolute neutrophils can accompany infection or inflammation.',
+      mgDl: const LabRanges(
+        low: 1.5,
+        high: 6.6,
+        referenceRange: '1.5–6.6 ×10⁹/L',
+        unit: '×10⁹/L',
+      ),
+    ),
+    LabKnowledge(
+      id: 'lymph_abs',
+      name: 'Lymphocytes (absolute)',
+      assayCodes: const ['LYMPH#'],
+      namePatterns: [
+        RegExp(r'absolute number of lymphocytes', caseSensitive: false),
+      ],
+      information: 'Absolute lymphocyte count helps assess immune/viral patterns.',
+      description: 'Interpreted with symptoms and the rest of the CBC.',
+      normalSuggestion: 'Keep routine monitoring as advised.',
+      lowSuggestion: 'Low lymphocytes need clinician context.',
+      highSuggestion:
+          'Mildly high lymphocytes can occur with viral illness — follow up if prolonged.',
+      mgDl: const LabRanges(
+        low: 1.5,
+        high: 3.5,
+        referenceRange: '1.5–3.5 ×10⁹/L',
+        unit: '×10⁹/L',
+      ),
+    ),
+    LabKnowledge(
+      id: 'mono_abs',
+      name: 'Monocytes (absolute)',
+      assayCodes: const ['MONO#'],
+      namePatterns: [
+        RegExp(r'absolute monocyte count', caseSensitive: false),
+      ],
+      information: 'Absolute monocyte count complements the monocyte percentage.',
+      description: 'Used in broader immune/inflammation assessment.',
+      normalSuggestion: 'No special action when in range.',
+      lowSuggestion: 'Low absolute monocytes are usually minor alone.',
+      highSuggestion: 'High absolute monocytes may need clinical correlation.',
+      mgDl: const LabRanges(
+        low: 0,
+        high: 1,
+        referenceRange: '0–1 ×10⁹/L',
+        unit: '×10⁹/L',
+      ),
+    ),
+    LabKnowledge(
+      id: 'eo_abs',
+      name: 'Eosinophils (absolute)',
+      assayCodes: const ['EO#'],
+      namePatterns: [
+        RegExp(r'absolute number of eosinophils', caseSensitive: false),
+      ],
+      information: 'Absolute eosinophil count is preferred over percentage alone.',
+      description: 'Can rise with allergy or other eosinophilic conditions.',
+      normalSuggestion: 'No action needed when in range.',
+      lowSuggestion: 'Low eosinophils are typically fine.',
+      highSuggestion: 'High eosinophils should be reviewed if symptoms persist.',
+      mgDl: const LabRanges(
+        low: 0,
+        high: 0.7,
+        referenceRange: '0–0.7 ×10⁹/L',
+        unit: '×10⁹/L',
+      ),
+    ),
+    LabKnowledge(
+      id: 'baso_abs',
+      name: 'Basophils (absolute)',
+      assayCodes: const ['BASO#'],
+      namePatterns: [
+        RegExp(r'absolute number of basophils', caseSensitive: false),
+      ],
+      information: 'Absolute basophil count is usually very low.',
+      description: 'Marked elevations deserve clinical review.',
+      normalSuggestion: 'No special action when in range.',
+      lowSuggestion: 'Low basophils are normal for many people.',
+      highSuggestion: 'High basophils should be checked by your clinician.',
+      mgDl: const LabRanges(
+        low: 0,
+        high: 0.2,
+        referenceRange: '0–0.2 ×10⁹/L',
+        unit: '×10⁹/L',
+      ),
+    ),
+    LabKnowledge(
+      id: 'esr',
+      name: 'ESR',
+      assayCodes: const ['ESR'],
+      namePatterns: [
+        RegExp(r'erythrocyte sedimentation rate|\besr\b', caseSensitive: false),
+      ],
+      information:
+          'ESR is a nonspecific inflammation marker based on how fast red cells settle.',
+      description: 'Can rise with infection, inflammation, or other conditions.',
+      normalSuggestion: 'No action needed when ESR is low/normal.',
+      lowSuggestion: 'Very low ESR is usually not concerning.',
+      highSuggestion:
+          'High ESR needs clinical context — discuss symptoms and next tests with your doctor.',
+      mgDl: const LabRanges(
+        low: 0,
+        high: 15,
+        referenceRange: '< 15 mm/h',
+        unit: 'mm/h',
+      ),
+    ),
+  ];
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>414398000383-38tmu94r0di7rang5j2mce0pil61bnq1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.414398000383-38tmu94r0di7rang5j2mce0pil61bnq1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDlOc_zEpHP92vYjoEtZTPORHkv7-oxvLc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>414398000383</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.healthy.healthyProject</string>
+	<key>PROJECT_ID</key>
+	<string>labwise-e7923</string>
+	<key>STORAGE_BUCKET</key>
+	<string>labwise-e7923.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:414398000383:ios:c9e23eb3f14555de5cf0ca</string>
+</dict>
+</plist>

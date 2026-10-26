@@ -1,0 +1,477 @@
+{
+  "@@locale": "ru",
+  "appTitle": "LabWise Health",
+  "cancel": "Отмена",
+  "ok": "ОК",
+  "delete": "Удалить",
+  "save": "Сохранить",
+  "signOut": "Выйти",
+  "tabAnalyze": "Анализ",
+  "tabHistory": "История",
+  "tabPlan": "План",
+  "tabProfile": "Профиль",
+  "authTagline": "Войдите один раз, и история анализов будет синхронизирована на всех устройствах. Вы останетесь в системе, пока не выйдете сами.",
+  "authWelcome": "Добро пожаловать",
+  "authExplainer": "Вход автоматически создаёт аккаунт, если вы новый пользователь, или возвращает вас в существующий.",
+  "continueWithGoogle": "Продолжить с Google",
+  "continueWithApple": "Продолжить с Apple",
+  "signingIn": "Выполняется вход…",
+  "authPrivacyNote": "Ваши отчёты доступны только вашему аккаунту.",
+  "signInCanceled": "Вход отменён.",
+  "signInFailed": "Не удалось войти через {provider}. {detail}",
+  "firebaseNotConfigured": "Firebase ещё не настроен на этом компьютере.",
+  "firebaseSetupIntro": "Создайте проект LabWise в Firebase, включите вход через Google и выполните:",
+  "firebaseSetupFooter": "Это подключит Auth, Firestore и Storage, чтобы история синхронизировалась между устройствами.",
+  "signOutQuestion": "Выйти из аккаунта?",
+  "signOutBody": "Вы можете войти снова в любой момент. Облачная история останется в вашем аккаунте.",
+  "cloudSyncFailed": "Не удалось синхронизировать облачную историю. Показана локальная копия.",
+  "analyzeIntro": "Мы читаем отчёт целиком, извлекаем каждый показатель и объясняем его简 понятно: информация, описание и рекомендация.",
+  "howItWorks": "Как это работает",
+  "stepUploadTitle": "Загрузите",
+  "stepUploadBody": "Выберите отчёт в формате PDF или Word с устройства.",
+  "stepUnderstandTitle": "Разберитесь",
+  "stepUnderstandBody": "Для каждого показателя есть информация, описание и рекомендация.",
+  "stepActTitle": "Действуйте",
+  "stepActBody": "Сначала просмотрите показатели, требующие внимания, затем обсудите их с врачом.",
+  "filesStayOnDevice": "Ваши файлы остаются на этом устройстве. История сохраняется локально.",
+  "uploadTitle": "Загрузите анализ",
+  "uploadSubtitle": "PDF или Word (.docx). Мы читаем документ целиком и объясняем каждый результат.",
+  "chooseFile": "Выбрать файл",
+  "readingReport": "Читаем ваш отчёт…",
+  "readingReportSubtitle": "Извлекаем показатели и готовим рекомендации",
+  "alreadyUploadedTitle": "Уже загружено",
+  "alreadyUploadedBody": "«{fileName}» уже есть в истории. Откройте «Историю», вместо того чтобы загружать дубликат.",
+  "viewHistory": "Открыть историю",
+  "errorReadFile": "Не удалось прочитать файл. Попробуйте ещё раз.",
+  "errorScannedPdf": "Похоже, это отсканированный PDF. Попробуйте текстовый PDF или экспорт из Word.",
+  "errorGeneric": "При чтении файла произошла ошибка. Попробуйте другой PDF или DOCX.",
+  "errorUnsupportedType": "Неподдерживаемый тип файла.",
+  "historyTitle": "История",
+  "historySummary": "{reports, plural, one{{reports} отчёт} few{{reports} отчёта} other{{reports} отчётов}} в {folders, plural, one{{folders} папке} other{{folders} папках}}.",
+  "reportCount": "{count, plural, one{{count} отчёт} few{{count} отчёта} other{{count} отчётов}}",
+  "needAttentionSuffix": "{count} требуют внимания",
+  "noReportsTitle": "Отчётов пока нет",
+  "noReportsBody": "Загрузите PDF или Word со вкладки «Анализ». Отчёты автоматически распределяются по папкам по типу исследования.",
+  "deleteReportTitle": "Удалить отчёт?",
+  "deleteReportBody": "Удалить «{fileName}» из истории?",
+  "categoryBloodCount": "Общий анализ крови",
+  "categoryBloodCountDesc": "Клетки крови, гемоглобин, тромбоциты",
+  "categoryBiochemistry": "Биохимия крови",
+  "categoryBiochemistryDesc": "Глюкоза, холестерин, показатели печени и почек",
+  "categoryHormones": "Гормоны",
+  "categoryHormonesDesc": "Щитовидная железа и другие гормональные панели",
+  "categoryUrinalysis": "Анализы мочи",
+  "categoryUrinalysisDesc": "Тест-полоски и микроскопия мочи",
+  "categoryUrogenital": "Урогенитальные",
+  "categoryUrogenitalDesc": "Микроскопия мазков и ПЦР-панели",
+  "categoryOther": "Другие отчёты",
+  "categoryOtherDesc": "Отчёты, которые пока не удалось отнести к категории",
+  "categoryInfection": "Тесты на инфекции",
+  "categoryInfectionDesc": "Хеликобактер и другие тесты на инфекции",
+  "yourResults": "Ваши результаты",
+  "done": "Готово",
+  "suggestions": "Рекомендации",
+  "needsAttention": "Требует внимания",
+  "needsAttentionSubtitle": "Значения вне типичных диапазонов с понятными следующими шагами.",
+  "allFindings": "Все показатели",
+  "otherFindings": "Остальные показатели",
+  "everyPointRead": "Каждый показатель, прочитанный из документа.",
+  "noStructuredPoints": "Структурированные показатели не найдены. Файл сохранён в истории, и вы сможете открыть его позже.",
+  "resultsDisclaimer": "Только образовательные рекомендации — не медицинская консультация. Всегда согласовывайте решения с врачом.",
+  "pointsRead": "Показателей",
+  "needAttentionLabel": "Требуют внимания",
+  "documentDetails": "Данные документа",
+  "fieldExam": "Исследование",
+  "fieldClinic": "Клиника",
+  "fieldPatient": "Пациент",
+  "fieldReportNumber": "№ отчёта",
+  "fieldSampleDate": "Дата забора",
+  "fieldDoctor": "Врач",
+  "fieldMethod": "Метод",
+  "fieldAddress": "Адрес",
+  "fieldPhone": "Телефон",
+  "fieldEmail": "Эл. почта",
+  "fieldLabLicence": "Лицензия лаборатории",
+  "healthNeedsReview": "Нужен разбор",
+  "healthLookingGood": "Всё хорошо",
+  "healthSomeAttention": "Нужно внимание",
+  "healthFollowUp": "Рекомендуется наблюдение",
+  "markerInformation": "Информация",
+  "markerDescription": "Описание",
+  "markerSuggestion": "Рекомендация",
+  "markerCode": "Код: {code}",
+  "markerRef": "Норма: {range}",
+  "statusNormal": "Норма",
+  "statusLow": "Ниже нормы",
+  "statusHigh": "Выше нормы",
+  "statusUnknown": "Начнём",
+  "attachedFile": "Прикреплённый файл",
+  "attachedFileUnavailable": "Файл недоступен для скачивания",
+  "attachedFileOnDevice": "Сохранён на этом устройстве",
+  "attachedFileSynced": "Синхронизирован с вашим аккаунтом",
+  "downloadFile": "Скачать файл",
+  "preparing": "Подготовка…",
+  "attachedFileMissing": "Прикреплённый файл недоступен.",
+  "attachedFileExportFailed": "Не удалось экспортировать файл. Попробуйте ещё раз.",
+  "profileTitle": "Профиль",
+  "profileSubtitle": "Данные из аккаунта остаются без изменений. Медицинские данные не обязательны и нужны только для контекста.",
+  "googleAccount": "Аккаунт Google",
+  "fieldName": "Имя",
+  "fieldSurname": "Фамилия",
+  "managedByGoogle": "Управляется вашим аккаунтом",
+  "healthDetails": "Данные о здоровье",
+  "updateAnytime": "Их можно изменить в любой момент.",
+  "fieldWeight": "Вес",
+  "fieldHeight": "Рост",
+  "fieldAge": "Возраст",
+  "fieldCountry": "Страна",
+  "unitKg": "кг",
+  "unitCm": "см",
+  "unitYearsOld": "лет",
+  "selectCountry": "Выберите страну",
+  "searchCountry": "Поиск страны",
+  "noCountryMatch": "Нет стран по запросу «{query}».",
+  "bmiNote": "ИМТ {bmi} — ориентировочная оценка.",
+  "profileSaved": "Профиль сохранён",
+  "profileSaveFailed": "Не удалось сохранить профиль. Попробуйте ещё раз.",
+  "validationWeight": "Введите вес от 2 до 400 кг.",
+  "validationHeight": "Введите рост от 40 до 260 см.",
+  "validationAge": "Введите возраст от 1 до 120 лет.",
+  "language": "Язык",
+  "languageSubtitle": "Изменения применяются ко всему приложению.",
+  "languageEnglish": "English",
+  "languageRussian": "Русский",
+  "setupWelcomeNamed": "Добро пожаловать, {name}",
+  "setupWelcome": "Добро пожаловать в LabWise",
+  "setupBody": "Добавьте несколько данных о здоровье, чтобы результаты были понятнее. Это можно пропустить и заполнить позже в профиле.",
+  "saveAndContinue": "Сохранить и продолжить",
+  "skipForNow": "Пропустить",
+  "setupSaveFailed": "Не удалось сохранить. Это можно добавить позже.",
+  "planTitle": "Ваш план",
+  "planHeadlineUnder": "{who} план, чтобы постепенно набрать вес и сохранить энергию.",
+  "planHeadlineHealthy": "{who} план, чтобы удержать здоровый диапазон и оставаться в форме.",
+  "planHeadlineAbove": "{who} план, чтобы постепенно снижать вес без чувства голода.",
+  "planHeadlineWellAbove": "{who} мягкий план, щадящий суставы, чтобы начать снижать вес.",
+  "planHeadlineFallback": "Укажите рост и вес, чтобы получить персональный план.",
+  "planWhoFallback": "Вот",
+  "bmiUnder": "Ниже нормы",
+  "bmiHealthy": "Здоровый диапазон",
+  "bmiAbove": "Выше нормы",
+  "bmiWellAbove": "Значительно выше нормы",
+  "bmiProfileNeeded": "Нужен профиль",
+  "targetsTuned": "Цели ниже подобраны под этот диапазон.",
+  "metricKcal": "ккал / день",
+  "metricWater": "вода",
+  "metricSteps": "шагов",
+  "eatingWindow": "Окно питания",
+  "eatingWindowSubtitle": "Принимайте пищу в интервале {window}",
+  "eatingWindowFallback": "Когда есть в течение дня",
+  "movement": "Движение",
+  "movementSubtitle": "Виды спорта, подобранные под ваше тело и возраст",
+  "dailyHabits": "Ежедневные привычки",
+  "dailyHabitsSubtitle": "Мелочи, которые дают результат",
+  "fromYourReports": "По вашим анализам",
+  "fromYourReportsSubtitle": "Скорректировано по показателям, требующим внимания",
+  "planDisclaimer": "Общие рекомендации по образу жизни на основе введённых данных — не медицинская консультация. Перед изменением питания, нагрузок или приёма лекарств проконсультируйтесь с врачом.",
+  "planSetupTitle": "Расскажите немного о себе",
+  "planSetupBody": "Добавьте {fields} в профиле, и эта вкладка построит время приёмов пищи, виды спорта и дневные цели именно для вас.",
+  "openProfile": "Открыть профиль",
+  "planMissingHint": "Добавьте {fields} для более точного плана.",
+  "fieldWeightLower": "вес",
+  "fieldHeightLower": "рост",
+  "fieldAgeLower": "возраст",
+  "mealBreakfast": "Завтрак",
+  "mealBreakfastIdea": "Белок и медленные углеводы — яйца или йогурт с овсянкой и фруктами.",
+  "mealLunch": "Обед",
+  "mealLunchIdea": "Половина тарелки овощей, ладонь белка, кулак крупы.",
+  "mealSnack": "Перекус",
+  "mealSnackIdea": "Орехи, сыр или смузи — добавят калорий без тяжести.",
+  "mealLightSnack": "Лёгкий перекус",
+  "mealLightSnackIdea": "Фрукт с горстью орехов, если почувствуете упадок сил.",
+  "mealDinner": "Ужин",
+  "mealDinnerIdeaLight": "Легче и раньше — овощи, нежирный белок, минимум масла.",
+  "mealDinnerIdeaBalanced": "Сбалансированная тарелка, закончите примерно за 2 часа до сна.",
+  "mealKitchenClosed": "Кухня закрыта",
+  "mealKitchenClosedIdea": "После этого только вода или травяной чай — это бережёт сон.",
+  "activityWalking": "Ходьба",
+  "activityWalkingSchedule": "30–40 мин, почти каждый день",
+  "activityWalkingWhy": "Самый простой способ сжигать жир без нагрузки на колени и бёдра.",
+  "activitySwimming": "Плавание или аквааэробика",
+  "activitySwimmingSchedule": "2 раза в неделю",
+  "activitySwimmingWhy": "Вода держит вес тела, поэтому суставам комфортно.",
+  "activityLightStrength": "Лёгкая силовая программа",
+  "activityLightStrengthSchedule": "2 раза в неделю, 20 мин",
+  "activityLightStrengthWhy": "Сохраняет мышцы при снижении веса и защищает обмен веществ.",
+  "activityBriskWalk": "Быстрая ходьба или велосипед",
+  "activityBriskWalkSchedule": "35 мин, 5 раз в неделю",
+  "activityBriskWalkWhy": "Регулярное кардио — самый надёжный способ снижать жир.",
+  "activityStrength": "Силовые тренировки",
+  "activityStrengthSchedule2": "2 раза в неделю",
+  "activityStrengthSchedule3": "3 раза в неделю",
+  "activityStrengthWhyMuscle": "Наращивает мышцы, поэтому вы тратите больше в покое.",
+  "activityStrengthWhyBone": "Защищает плотность костей и мышцы с возрастом.",
+  "activityStrengthWhyGain": "Превращает дополнительные калории в мышцы, а не только в жир.",
+  "activityPostMeal": "Прогулка после еды",
+  "activityPostMealSchedule": "10–15 мин после ужина",
+  "activityPostMealWhy": "Сглаживает скачок сахара после самого плотного приёма пищи.",
+  "activityEasyWalk": "Спокойная ходьба",
+  "activityEasyWalkSchedule": "20–30 мин ежедневно",
+  "activityEasyWalkWhy": "Поддерживает сердце, не сжигая нужные вам калории.",
+  "activityMixedCardio": "Смешанное кардио",
+  "activityMixedCardioSchedule": "150 мин в неделю",
+  "activityMixedCardioWhy": "Соответствует уровню активности с лучшими показателями сердца.",
+  "activityEnjoy": "То, что нравится",
+  "activityEnjoySchedule": "1 раз в неделю",
+  "activityEnjoyWhy": "Футбол, танцы, походы — удовольствие помогает не бросать.",
+  "activityBalance": "Баланс и подвижность",
+  "activityBalanceSchedule": "10 мин ежедневно",
+  "activityBalanceWhy": "Снижает риск падений и сохраняет свободу движений в суставах.",
+  "habitWater": "Выпивайте около {litres} л воды в течение дня.",
+  "habitSleep": "Спите 7–9 часов и ложитесь примерно в одно время.",
+  "habitSugar": "Сладкие напитки — только по особым случаям.",
+  "habitFrequentMeals": "Ешьте каждые 3–4 часа, чтобы не оставаться без сил.",
+  "habitCalcium": "Включайте продукты с кальцием и витамином D почти каждый день.",
+  "habitStand": "Вставайте и двигайтесь 2 минуты каждый час сидячей работы.",
+  "noteCholesterol": "Холестерин требует внимания — выбирайте овсянку, бобовые и оливковое масло вместо жареного.",
+  "noteHdl": "Низкий ЛПВП лучше всего растёт от регулярного кардио — не пропускайте такие дни.",
+  "noteTriglycerides": "Высокие триглицериды быстро снижаются, если убрать сладкие напитки и алкоголь.",
+  "noteGlucose": "Сахар крови требует внимания — прогулка после еды здесь важнее всего остального.",
+  "noteHemoglobin": "Гемоглобин вне нормы — добавьте продукты с железом и обсудите анализы с врачом.",
+  "noteVitaminD": "Витамин D понижен — обычно помогают дневной свет и назначенная врачом добавка.",
+  "noteThyroid": "Показатели щитовидной железы требуют разбора; до консультации врача оставьте нагрузки умеренными.",
+  "noteHPylori": "Тест на хеликобактер положительный — следуйте назначенному врачом лечению и пока придерживайтесь регулярного щадящего питания.",
+  "comparisonTitle": "Сравнение с прошлым анализом",
+  "trendBetter": "Лучше, чем в прошлый раз",
+  "trendWorse": "Стоит присмотреться",
+  "trendSteady": "Без изменений",
+  "trendBetterBody": "Больше показателей вернулось в пределы нормы по сравнению с прошлым разом.",
+  "trendWorseBody": "Несколько показателей вышли за пределы нормы со времени прошлого анализа.",
+  "trendSteadyBody": "Показатели остались примерно на том же уровне, что и в прошлый раз.",
+  "previousTestOn": "Прошлый анализ {date}",
+  "@previousTestOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreBetterBy": "+{points} п.",
+  "@scoreBetterBy": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreWorseBy": "{points} п.",
+  "@scoreWorseBy": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreNoChange": "Без изменений",
+  "inRangeNow": "{current} из {total} в норме",
+  "@inRangeNow": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "wasInRange": "было {previous} из {total}",
+  "@wasInRange": {
+    "placeholders": {
+      "previous": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "countImproved": "{count, plural, one{{count} улучшился} few{{count} улучшились} other{{count} улучшились}}",
+  "@countImproved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countWorsened": "{count, plural, one{{count} ухудшился} few{{count} ухудшились} other{{count} ухудшились}}",
+  "@countWorsened": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countSteady": "{count, plural, one{{count} без изменений} other{{count} без изменений}}",
+  "@countSteady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "whatChanged": "Что изменилось",
+  "whatChangedSubtitle": "Показатели, измеренные в обоих анализах",
+  "backInRange": "Вернулся в норму",
+  "leftRange": "Вышел из нормы",
+  "showAllChanges": "Показать все показатели ({count})",
+  "@showAllChanges": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "showFewerChanges": "Только изменившиеся",
+  "updatedBadge": "Обновлён",
+  "replacedEarlierVersion": "Заменил загрузку от {date}",
+  "@replacedEarlierVersion": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "markersCount": "{count, plural, one{{count} показатель} few{{count} показателя} other{{count} показателей}}",
+  "@markersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "toReviewCount": "{count} на проверку",
+  "@toReviewCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "folderTrendImproved": "{count} с улучшением",
+  "@folderTrendImproved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activityTitle": "Календарь активности",
+  "activitySubtitle": "Нажмите на любой день, чтобы увидеть детали",
+  "activityLoading": "Читаем вашу активность…",
+  "activityNoneRecorded": "В этот день активность не записана.",
+  "activityDistance": "дистанция",
+  "activityMinutes": "актив. мин",
+  "activityWalkRun": "Ходьба и бег",
+  "activityCycling": "Велосипед",
+  "activitySessions": "Тренировки",
+  "activityKindWalking": "Ходьба",
+  "activityKindRunning": "Бег",
+  "activityKindCycling": "Велосипед",
+  "activityKindOther": "Тренировка",
+  "activityDurationMinutes": "{count} мин",
+  "@activityDurationMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activityConnectTitle": "Подключите активность",
+  "activityConnectBody": "Разрешите LabWise читать шаги, ходьбу, бег и велосипед, чтобы календарь показывал каждый день. Приложение только читает — ничего не записывает, и данные остаются на вашем телефоне.",
+  "activityConnectButton": "Подключить",
+  "activityHealthConnectBody": "Для Android нужно приложение Health Connect. Установите или обновите его и вернитесь сюда.",
+  "activityInstallHealthConnect": "Установить Health Connect",
+  "activityRestartNeeded": "Отслеживание активности только что установлено. Полностью закройте приложение и откройте снова, чтобы завершить настройку — горячего перезапуска недостаточно.",
+  "activityToday": "Сегодня",
+  "activityOpenCalendar": "Календарь",
+  "activityConnectShort": "Только чтение, данные остаются на телефоне",
+  "targetsTitle": "Ваши цели",
+  "targetsSubtitle": "Откуда берётся каждое число и почему это важно",
+  "targetsTapHint": "Откуда эти числа?",
+  "targetsInputsTitle": "Рассчитано по данным",
+  "targetsInputsBody": "Вес {weight} кг · Рост {height} см · Возраст {age}",
+  "@targetsInputsBody": {
+    "placeholders": {
+      "weight": {
+        "type": "String"
+      },
+      "height": {
+        "type": "String"
+      },
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "targetsInputsNote": "Измените любое из них в профиле, и все цели ниже обновятся.",
+  "targetBmiTitle": "Индекс массы тела",
+  "targetBmiWhat": "Вес, делённый на квадрат роста. Одно число, описывающее их соотношение.",
+  "targetBmiWhy": "Все остальные цели на этом экране настраиваются по вашему диапазону, поэтому это отправная точка, а не оценка сама по себе.",
+  "targetBmiBands": "Ниже 18,5 — недостаточный · от 18,5 до 25 — норма · от 25 до 30 — выше нормы · 30 и больше — значительно выше.",
+  "targetBmiCaveat": "ИМТ не отличает мышцы от жира, поэтому у спортсменов он часто завышен при отличном здоровье. Это ориентир, а не приговор.",
+  "targetCaloriesTitle": "Калории в день",
+  "targetCaloriesWhat": "Оценка того, сколько организм тратит за день при небольшой активности, с поправкой на вашу цель.",
+  "targetCaloriesWhy": "Такое питание удерживает вес. Поправка намеренно небольшая, чтобы результат был постепенным, а не изнуряющим.",
+  "targetCaloriesHow": "Рассчитано по формуле Миффлина — Сан Жеора из веса, роста и возраста, умножено на 1,45 за повседневную активность. Приложение не спрашивает пол, поэтому результат усреднён между мужской и женской формулами — погрешность около 80 ккал в обе стороны.",
+  "targetCaloriesAdjustUnder": "Добавлено 300 ккал для постепенного набора веса.",
+  "targetCaloriesAdjustHealthy": "Без поправки — это ваш уровень поддержания.",
+  "targetCaloriesAdjustAbove": "Вычтено 350 ккал для постепенного снижения.",
+  "targetCaloriesAdjustWellAbove": "Вычтено 500 ккал для устойчивого снижения веса.",
+  "targetWaterTitle": "Вода",
+  "targetWaterWhat": "Примерно 33 мл на каждый килограмм веса — поэтому при большем весе и норма выше.",
+  "targetWaterWhy": "Даже лёгкая нехватка жидкости проявляется усталостью и головной болью задолго до чувства жажды и искажает некоторые анализы.",
+  "targetWaterCaveat": "Пейте больше в жару, при нагрузках и во время болезни. Часть жидкости поступает с едой, так что это не только стаканы.",
+  "targetStepsTitle": "Шаги",
+  "targetStepsWhat": "Дневная цель по движению: базовые 8 000 с поправкой на вашу ситуацию.",
+  "targetStepsWhy": "Регулярная ходьба влияет на давление, сахар и настроение сильнее почти любой другой привычки и не требует инвентаря.",
+  "targetStepsHow": "Повышена при ИМТ выше нормы, снижена при значительном превышении, чтобы не перегружать суставы в начале, уменьшена после 60 лет и увеличена до 30 лет.",
+  "targetsClinicianTitle": "Это не медицинская рекомендация",
+  "targetsClinicianBody": "Это общие оценки благополучия, рассчитанные на вашем телефоне по трём введённым числам. Они ничего не знают о вашей истории болезни, лекарствах, беременности или состояниях. Обсудите их с врачом, прежде чем что-то менять.",
+  "statusGood": "Всё хорошо",
+  "statusWatch": "Стоит последить",
+  "statusAttention": "Требует внимания",
+  "statusUnknownBody": "Добавьте свои данные или загрузите анализ, чтобы увидеть картину.",
+  "statusFlagged": "{count, plural, one{{count} показатель на проверку} few{{count} показателя на проверку} other{{count} показателей на проверку}}",
+  "@statusFlagged": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statusAllClear": "Все {count} показателей в норме",
+  "@statusAllClear": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statusNoReport": "Анализов пока нет",
+  "statusBmi": "ИМТ {bmi}",
+  "@statusBmi": {
+    "placeholders": {
+      "bmi": {
+        "type": "String"
+      }
+    }
+  },
+  "statusAddDetails": "Добавьте {fields}",
+  "@statusAddDetails": {
+    "placeholders": {
+      "fields": {
+        "type": "String"
+      }
+    }
+  },
+  "statusTitle": "Ваше состояние сейчас"
+}

@@ -1,0 +1,82 @@
+ՀԵՏԱԶՈՏՈՒԹՅԱՆ ԱՐԴՅՈՒՆՔ / EXAMINATION REPORT № 646082 
+Հետազոտվող`  ՍՈՒՔԻԱՍՅԱՆ ԱՎԵՏԻՔ ԱՐՄԵՆԻ 
+Սեռ / Sex  Արական / Male 
+․Էլ  փոստ / E-mail  
+Հասցե / Address  ԵՐԵՎԱՆ ՔԱՆԱՔԵՌ-ԶԵՅԹՈՒՆ ԶԱՔԱՐԻԱ 
+ՔԱՆԱՔԵՌՑՈՒ Փ. Շ 117 
+Հեռ. / Tel.  
+Ծննդյան տվյալներ / DOB  15/07/1990 (34 տ) 
+ԱՐՅԱՆ  ԸՆԴՀԱՆՈՒՐ  ՀԵՏԱԶՈՏՈՒԹՅՈՒՆ / COMPLETE BLOOD COUNT 
+Ընդունման ամսաթիվ / Registration date  15/02/2025 11:08:46 
+Նմուշառման ամսաթիվ / Manipulation date  15/02/2025 11:13:34 
+Տրման ամսաթիվ / Approval date  15/02/2025 12:41:24 
+Գեներացման ամսաթիվ / Generated  15/02/2025 12:48:14 
+Patient  SUKIASYAN AVETIK 
+Ռեֆ. ցուցանիշ 
+Reference Range 
+Արդյունք 
+Results 
+Չափ. Մ. 
+Unit 
+Հետազոտություն / Միջազգային անվանում 
+International Name Test / 
+Lեյկոցիտների ընդհանուր քանակ 
+Total number of leucocytes 10^9/L 4 - 10,5 8.76 WBC 
+Էրիթրոցիտների ընդհանուր քանակ 
+Total number of erythrocytes 10^12/L 4,7 - 6 5.44 RBC 
+Հեմոգլոբինի կոնցենտրացիա 
+Hemoglobin concentration g/dL 13,5 - 18 16.0 HGB 
+Հեմատոկրիտ 
+Hematocrit %42 - 52 48.5 HCT 
+Էրիթրոցիտների միջին ծավալը նմուշի ընդհանուր ծավալի մեջ 
+Average volume of erythrocytes in the total volume of the sample f L 78 - 100 89.2 MCV 
+Հեմոգլոբինի միջին ծավալը էրիթրոցիտի մեջ 
+The average volume of hemoglobin in an erythrocyte pg 27 - 31 29.4 MCH 
+Հեմոգլոբինի միջին կոնցենտրացիան էրիթրոցիտի մեջ 
+The average concentration of hemoglobin in an erythrocyte g/dL 32 - 36 33.0 MCHC 
+Թրոմբոցիտ 
+Platelet 10^9/L 150 - 450 242 PLT 
+Էրիթրոցիտների անիզոցիտոզի ցուցանիշ, ստանդարտ շեղում
+Erythrocyte anisocytosis index, standard deviation f L 36,4 - 46,3 39.0 RDW-SD 
+Էրիթրոցիտների անիզոցիտոզի ցուցանիշ,տատանման կոեֆֆիցիենտ 
+Anisocytosis indicator of erythrocytes, coefficient of variation %11,5 - 14 12.0 RDW-CV 
+Թրոմբոցիտների անիզոցիտոզի ցուցանիշ 
+Platelet anisocytosis index f L 9 - 17 12.3 PDW 
+Թրոմբոցիտի միջին ծավալը 
+Average platelet volume f L 7.4 - 10.4 10.7 MPV 
+Խոշոր թրոմբոցիտների կոեֆֆիցիենտ 
+Coefficient of large platelets %13 - 43 29.7 P-LCR 
+Թրոմբոկրիտ 
+Thrombocrit %0,17 - 0,40 0.26 PCT 
+Նեյտրոֆիլների հարաբերական քանակություն 
+Relative number of neutrophils %34 - 71,1 51.2 NEUT% 
+Լիմֆոցիտների հարաբերական քանակություն 
+Relative number of lymphocytes %19,3 - 51,7 40.9 LYMPH% 
+Մոնոցիտների հարաբերական քանակություն 
+Relative number of monocytes %4,7 - 12,5 6.7 MONO% 
+Էօզինոֆիլների հարաբերական քանակություն 
+Relative number of eosinophils %0,7 - 5,8 0.9 EO% 
+Բազոֆիլների հարաբերական քանակություն 
+Relative number of basophils %0,0 - 2,0 0.3 BASO% 
+Նեյտրոֆիլների բացարձակ քանակություն 
+Absolute neutrophil count 10^9/L 1,5 - 6,6 4.48 NEUT# 
+Լիմֆոցիտների բացարձակ քանակություն 
+Absolute number of lymphocytes 10^9/L 1,5 - 3,5 3.58 LYMPH# 
+Մոնոցիտների բացարձակ քանակություն 
+Absolute monocyte count 10^9/L 0 - 1 0.59 MONO# 
+Էոզինոֆիլների բացարձակ քանակություն 
+Absolute number of eosinophils 10^9/L 0 - 0,7 0.08 EO# 
+Բազոֆիլների բացարձակ քանակություն 
+Absolute number of basophils 10^9/L 0 - 0,2 0.03 BASO# 
+Մեթոդ՝  հոսքային ցիտոմետրիա, սպեկտրաֆոտոմետրիկ, իմպեդանս (HORIBA YUMIZEN H550 FRANCE), Կենսանյութ՝  ամբողջական արյուն / whole blood 
+Էրիթրոցիտների նստեցման արագություն 
+Erythrocyte Sedimentation Rate mm/h < 15 1ESR 
+Մեթոդ՝  Վեստերգրենի մեթոդ (մանուալ ), Կենսանյութ՝  ամբողջական արյուն / whole blood 
+ 
+ԼԻՑԵՆԶԻԱ / LICENSE Կ- XX-001536 
+- Սույն գույնով նշված արդյունքը գտնվում է ռեֆերենս ցուցանիշների սահմանից դուրս 
+Պետրոսյան Ս. 
+Petrosyan S. 
+Էջ 1 - 1 
+Բժիշկ 
+Doctor 

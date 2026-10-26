@@ -1,0 +1,616 @@
+{
+  "@@locale": "en",
+  "appTitle": "LabWise Health",
+  "cancel": "Cancel",
+  "ok": "OK",
+  "delete": "Delete",
+  "save": "Save",
+  "signOut": "Sign out",
+  "tabAnalyze": "Analyze",
+  "tabHistory": "History",
+  "tabPlan": "Plan",
+  "tabProfile": "Profile",
+  "authTagline": "Sign in once to keep your lab history synced across devices. You stay signed in until you sign out.",
+  "authWelcome": "Welcome",
+  "authExplainer": "Signing in creates your account automatically if you are new, or logs you back in if you already use LabWise Health.",
+  "continueWithGoogle": "Continue with Google",
+  "continueWithApple": "Continue with Apple",
+  "signingIn": "Signing in…",
+  "authPrivacyNote": "Your reports stay private to your account.",
+  "signInCanceled": "Sign-in was canceled.",
+  "signInFailed": "Could not sign in with {provider}. {detail}",
+  "@signInFailed": {
+    "placeholders": {
+      "provider": {
+        "type": "String"
+      },
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "firebaseNotConfigured": "Firebase is not configured yet on this machine.",
+  "firebaseSetupIntro": "Create the LabWise Health Firebase project and enable Google Sign-In, then run:",
+  "firebaseSetupFooter": "This links Auth, Firestore, and Storage so history syncs across devices.",
+  "signOutQuestion": "Sign out?",
+  "signOutBody": "You can sign back in anytime. Cloud history stays saved to your account.",
+  "cloudSyncFailed": "Could not sync cloud history. Showing local copy.",
+  "analyzeIntro": "We read the full report, extract every test point, and explain each one with clear information, description, and suggestions.",
+  "howItWorks": "How it works",
+  "stepUploadTitle": "Upload",
+  "stepUploadBody": "Choose a PDF or Word report from your device.",
+  "stepUnderstandTitle": "Understand",
+  "stepUnderstandBody": "Every test point gets information, description, and a suggestion.",
+  "stepActTitle": "Act",
+  "stepActBody": "Review needs-attention items first, then confirm with your clinician.",
+  "filesStayOnDevice": "Your files stay on this device. History is saved locally.",
+  "uploadTitle": "Upload a lab report",
+  "uploadSubtitle": "PDF or Word (.docx). We read the full document and explain each result.",
+  "chooseFile": "Choose file",
+  "readingReport": "Reading your report…",
+  "readingReportSubtitle": "Extracting markers and preparing guidance",
+  "alreadyUploadedTitle": "Already uploaded",
+  "alreadyUploadedBody": "\"{fileName}\" is already in your history. Open History to view it instead of uploading a duplicate.",
+  "@alreadyUploadedBody": {
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "viewHistory": "View History",
+  "errorReadFile": "Could not read that file. Please try again.",
+  "errorScannedPdf": "This PDF looks scanned. Try a text-based PDF or Word export.",
+  "errorGeneric": "Something went wrong while reading the file. Please try another PDF or DOCX.",
+  "errorUnsupportedType": "Unsupported file type.",
+  "historyTitle": "History",
+  "historySummary": "{reports, plural, =1{1 report} other{{reports} reports}} in {folders, plural, =1{1 folder} other{{folders} folders}}.",
+  "@historySummary": {
+    "placeholders": {
+      "reports": {
+        "type": "int"
+      },
+      "folders": {
+        "type": "int"
+      }
+    }
+  },
+  "reportCount": "{count, plural, =1{1 report} other{{count} reports}}",
+  "@reportCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "needAttentionSuffix": "{count} need attention",
+  "@needAttentionSuffix": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noReportsTitle": "No reports yet",
+  "noReportsBody": "Upload a lab PDF or Word file from the Analyze tab. Reports get sorted into folders by test type automatically.",
+  "deleteReportTitle": "Delete report?",
+  "deleteReportBody": "Remove \"{fileName}\" from history?",
+  "@deleteReportBody": {
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "categoryBloodCount": "Blood Count",
+  "categoryBloodCountDesc": "Complete blood counts — cells, hemoglobin, platelets",
+  "categoryBiochemistry": "Blood Chemistry",
+  "categoryBiochemistryDesc": "Glucose, cholesterol, liver and kidney markers",
+  "categoryHormones": "Hormones",
+  "categoryHormonesDesc": "Thyroid and other hormone panels",
+  "categoryUrinalysis": "Urine Tests",
+  "categoryUrinalysisDesc": "Urine strip and microscopy results",
+  "categoryUrogenital": "Urogenital",
+  "categoryUrogenitalDesc": "Smear microscopy and PCR panels",
+  "categoryOther": "Other Reports",
+  "categoryOtherDesc": "Reports we could not categorize yet",
+  "categoryInfection": "Infection Tests",
+  "categoryInfectionDesc": "Helicobacter and other infection screens",
+  "yourResults": "Your results",
+  "done": "Done",
+  "suggestions": "Suggestions",
+  "needsAttention": "Needs attention",
+  "needsAttentionSubtitle": "Values outside typical ranges, with clear next-step guidance.",
+  "allFindings": "All findings",
+  "otherFindings": "Other findings",
+  "everyPointRead": "Every test point read from your document.",
+  "noStructuredPoints": "No structured test points were extracted. Your file is saved in History so you can open it again later.",
+  "resultsDisclaimer": "Educational guidance only — not medical advice. Always confirm decisions with a licensed clinician.",
+  "pointsRead": "Points read",
+  "needAttentionLabel": "Need attention",
+  "documentDetails": "Document details",
+  "fieldExam": "Exam",
+  "fieldClinic": "Clinic",
+  "fieldPatient": "Patient",
+  "fieldReportNumber": "Report #",
+  "fieldSampleDate": "Sample date",
+  "fieldDoctor": "Doctor",
+  "fieldMethod": "Method",
+  "fieldAddress": "Address",
+  "fieldPhone": "Phone",
+  "fieldEmail": "Email",
+  "fieldLabLicence": "Lab licence",
+  "healthNeedsReview": "Needs review",
+  "healthLookingGood": "Looking good",
+  "healthSomeAttention": "Some attention needed",
+  "healthFollowUp": "Follow up recommended",
+  "markerInformation": "Information",
+  "markerDescription": "Description",
+  "markerSuggestion": "Suggestion",
+  "markerCode": "Code: {code}",
+  "@markerCode": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "markerRef": "Ref: {range}",
+  "@markerRef": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "statusNormal": "Normal",
+  "statusLow": "Low",
+  "statusHigh": "High",
+  "statusUnknown": "Let's get started",
+  "attachedFile": "Attached file",
+  "attachedFileUnavailable": "File unavailable for download",
+  "attachedFileOnDevice": "Saved on this device",
+  "attachedFileSynced": "Synced from your account",
+  "downloadFile": "Download file",
+  "preparing": "Preparing…",
+  "attachedFileMissing": "Attached file is not available.",
+  "attachedFileExportFailed": "Could not export the file. Please try again.",
+  "profileTitle": "Profile",
+  "profileSubtitle": "Your Google details stay as they are. Health details are optional and only used to give better context.",
+  "googleAccount": "Google account",
+  "fieldName": "Name",
+  "fieldSurname": "Surname",
+  "managedByGoogle": "Managed by your account",
+  "healthDetails": "Health details",
+  "updateAnytime": "You can update these anytime.",
+  "fieldWeight": "Weight",
+  "fieldHeight": "Height",
+  "fieldAge": "Age",
+  "fieldCountry": "Country",
+  "unitKg": "kg",
+  "unitCm": "cm",
+  "unitYearsOld": "years old",
+  "selectCountry": "Select country",
+  "searchCountry": "Search country",
+  "noCountryMatch": "No country matches \"{query}\".",
+  "@noCountryMatch": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiNote": "BMI {bmi} — educational estimate only.",
+  "@bmiNote": {
+    "placeholders": {
+      "bmi": {
+        "type": "String"
+      }
+    }
+  },
+  "profileSaved": "Profile saved",
+  "profileSaveFailed": "Could not save profile. Try again.",
+  "validationWeight": "Enter a weight between 2 and 400 kg.",
+  "validationHeight": "Enter a height between 40 and 260 cm.",
+  "validationAge": "Enter an age between 1 and 120 years.",
+  "language": "Language",
+  "languageSubtitle": "Changes apply across the whole app.",
+  "languageEnglish": "English",
+  "languageRussian": "Русский",
+  "setupWelcomeNamed": "Welcome, {name}",
+  "@setupWelcomeNamed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "setupWelcome": "Welcome to LabWise",
+  "setupBody": "Add a few health details so results have better context. You can skip this and fill it in later from Profile.",
+  "saveAndContinue": "Save and continue",
+  "skipForNow": "Skip for now",
+  "setupSaveFailed": "Could not save. You can add this later.",
+  "planTitle": "Your Plan",
+  "planHeadlineUnder": "{who}, here's a plan to build weight steadily and keep energy up.",
+  "@planHeadlineUnder": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "planHeadlineHealthy": "{who}, here's a plan to hold your healthy range and stay strong.",
+  "@planHeadlineHealthy": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "planHeadlineAbove": "{who}, here's a plan to trim gradually without feeling hungry.",
+  "@planHeadlineAbove": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "planHeadlineWellAbove": "{who}, here's a gentle, joint-friendly plan to start losing weight.",
+  "@planHeadlineWellAbove": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "planHeadlineFallback": "Add your height and weight to unlock a plan built for you.",
+  "planWhoFallback": "Here",
+  "bmiUnder": "Under range",
+  "bmiHealthy": "Healthy range",
+  "bmiAbove": "Above range",
+  "bmiWellAbove": "Well above range",
+  "bmiProfileNeeded": "Profile needed",
+  "targetsTuned": "Targets below are tuned to this range.",
+  "metricKcal": "kcal / day",
+  "metricWater": "water",
+  "metricSteps": "steps",
+  "eatingWindow": "Eating window",
+  "eatingWindowSubtitle": "Keep food inside {window}",
+  "@eatingWindowSubtitle": {
+    "placeholders": {
+      "window": {
+        "type": "String"
+      }
+    }
+  },
+  "eatingWindowFallback": "When to eat across the day",
+  "movement": "Movement",
+  "movementSubtitle": "Sports picked for your body and age",
+  "dailyHabits": "Daily habits",
+  "dailyHabitsSubtitle": "Small things that compound",
+  "fromYourReports": "From your reports",
+  "fromYourReportsSubtitle": "Adjusted for values that need attention",
+  "planDisclaimer": "General wellbeing guidance based on the details you entered — not medical advice. Check with a clinician before changing diet, exercise, or medication.",
+  "planSetupTitle": "Tell us a little more",
+  "planSetupBody": "Add your {fields} in Profile and this tab will build meal timings, sport suggestions, and daily targets around you.",
+  "@planSetupBody": {
+    "placeholders": {
+      "fields": {
+        "type": "String"
+      }
+    }
+  },
+  "openProfile": "Open Profile",
+  "planMissingHint": "Add your {fields} for a sharper plan.",
+  "@planMissingHint": {
+    "placeholders": {
+      "fields": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldWeightLower": "weight",
+  "fieldHeightLower": "height",
+  "fieldAgeLower": "age",
+  "mealBreakfast": "Breakfast",
+  "mealBreakfastIdea": "Protein plus slow carbs — eggs or yogurt with oats and fruit.",
+  "mealLunch": "Lunch",
+  "mealLunchIdea": "Half the plate vegetables, a palm of protein, a fist of grains.",
+  "mealSnack": "Snack",
+  "mealSnackIdea": "Nuts, cheese, or a smoothie to add calories without bloating.",
+  "mealLightSnack": "Light snack",
+  "mealLightSnackIdea": "Fruit with a handful of nuts if you feel a dip.",
+  "mealDinner": "Dinner",
+  "mealDinnerIdeaLight": "Lighter and earlier — vegetables, lean protein, minimal oil.",
+  "mealDinnerIdeaBalanced": "Balanced plate, finish about 2 hours before bed.",
+  "mealKitchenClosed": "Kitchen closed",
+  "mealKitchenClosedIdea": "Water or herbal tea only after this — it protects your sleep.",
+  "activityWalking": "Walking",
+  "activityWalkingSchedule": "30–40 min, most days",
+  "activityWalkingWhy": "Easiest way to burn fat without stressing knees and hips.",
+  "activitySwimming": "Swimming or water aerobics",
+  "activitySwimmingSchedule": "2× per week",
+  "activitySwimmingWhy": "Water carries your weight, so joints stay comfortable.",
+  "activityLightStrength": "Light strength circuit",
+  "activityLightStrengthSchedule": "2× per week, 20 min",
+  "activityLightStrengthWhy": "Keeps muscle while you lose fat, which protects metabolism.",
+  "activityBriskWalk": "Brisk walking or cycling",
+  "activityBriskWalkSchedule": "35 min, 5× per week",
+  "activityBriskWalkWhy": "Steady cardio is the most reliable driver of fat loss.",
+  "activityStrength": "Strength training",
+  "activityStrengthSchedule2": "2× per week",
+  "activityStrengthSchedule3": "3× per week",
+  "activityStrengthWhyMuscle": "Builds muscle so you burn more at rest.",
+  "activityStrengthWhyBone": "Protects bone density and muscle as you age.",
+  "activityStrengthWhyGain": "Turns the extra calories you eat into muscle, not just fat.",
+  "activityPostMeal": "Post-meal walk",
+  "activityPostMealSchedule": "10–15 min after dinner",
+  "activityPostMealWhy": "Blunts the blood-sugar spike from your largest meal.",
+  "activityEasyWalk": "Easy walking",
+  "activityEasyWalkSchedule": "20–30 min daily",
+  "activityEasyWalkWhy": "Keeps the heart fit without burning the calories you need.",
+  "activityMixedCardio": "Mixed cardio",
+  "activityMixedCardioSchedule": "150 min per week",
+  "activityMixedCardioWhy": "Meets the activity level linked with the best heart markers.",
+  "activityEnjoy": "Something you enjoy",
+  "activityEnjoySchedule": "1× per week",
+  "activityEnjoyWhy": "Football, dancing, hiking — enjoyment is what makes it stick.",
+  "activityBalance": "Balance and mobility",
+  "activityBalanceSchedule": "10 min daily",
+  "activityBalanceWhy": "Reduces fall risk and keeps joints moving freely.",
+  "habitWater": "Drink about {litres} L of water across the day.",
+  "@habitWater": {
+    "placeholders": {
+      "litres": {
+        "type": "String"
+      }
+    }
+  },
+  "habitSleep": "Aim for 7–9 hours of sleep at consistent times.",
+  "habitSugar": "Keep sugary drinks for special occasions only.",
+  "habitFrequentMeals": "Eat something every 3–4 hours so you never run empty.",
+  "habitCalcium": "Include calcium and vitamin D rich foods most days.",
+  "habitStand": "Stand up and move for 2 minutes every hour you sit.",
+  "noteCholesterol": "Your cholesterol needs attention — favour oats, beans, and olive oil over fried food.",
+  "noteHdl": "Low HDL responds best to regular aerobic activity, so prioritise the cardio days.",
+  "noteTriglycerides": "High triglycerides improve quickly when you cut sugary drinks and alcohol.",
+  "noteGlucose": "Blood sugar needs attention — the post-meal walk matters more than anything else here.",
+  "noteHemoglobin": "Hemoglobin is outside range — include iron-rich foods and ask your clinician about testing.",
+  "noteVitaminD": "Vitamin D is low — daylight and a clinician-advised supplement usually fix this.",
+  "noteThyroid": "Thyroid values need review; keep activity gentle until your clinician advises.",
+  "noteHPylori": "Your Helicobacter test is positive — follow the treatment your clinician prescribes and keep meals regular and gentle meanwhile.",
+  "comparisonTitle": "Compared with your last test",
+  "trendBetter": "Better than last time",
+  "trendWorse": "Worth a closer look",
+  "trendSteady": "Holding steady",
+  "trendBetterBody": "More of your values sit inside their healthy range than they did before.",
+  "trendWorseBody": "A few values drifted out of range since your previous test.",
+  "trendSteadyBody": "Your values landed in much the same place as last time.",
+  "previousTestOn": "Previous test {date}",
+  "@previousTestOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreBetterBy": "+{points} pts",
+  "@scoreBetterBy": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreWorseBy": "{points} pts",
+  "@scoreWorseBy": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreNoChange": "No change",
+  "inRangeNow": "{current} of {total} in range",
+  "@inRangeNow": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "wasInRange": "was {previous} of {total}",
+  "@wasInRange": {
+    "placeholders": {
+      "previous": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "countImproved": "{count, plural, one{{count} improved} other{{count} improved}}",
+  "@countImproved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countWorsened": "{count, plural, one{{count} declined} other{{count} declined}}",
+  "@countWorsened": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countSteady": "{count, plural, one{{count} steady} other{{count} steady}}",
+  "@countSteady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "whatChanged": "What changed",
+  "whatChangedSubtitle": "Values measured in both tests",
+  "backInRange": "Back in range",
+  "leftRange": "Left range",
+  "showAllChanges": "Show all {count} values",
+  "@showAllChanges": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "showFewerChanges": "Show only what moved",
+  "updatedBadge": "Updated",
+  "replacedEarlierVersion": "Replaced your earlier upload from {date}",
+  "@replacedEarlierVersion": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "markersCount": "{count, plural, one{{count} marker} other{{count} markers}}",
+  "@markersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "toReviewCount": "{count} to review",
+  "@toReviewCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "folderTrendImproved": "{count} improving",
+  "@folderTrendImproved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activityTitle": "Activity calendar",
+  "activitySubtitle": "Tap any day to see what you did",
+  "activityLoading": "Reading your activity…",
+  "activityNoneRecorded": "No movement recorded on this day.",
+  "activityDistance": "distance",
+  "activityMinutes": "active min",
+  "activityWalkRun": "Walking & running",
+  "activityCycling": "Cycling",
+  "activitySessions": "Workouts",
+  "activityKindWalking": "Walk",
+  "activityKindRunning": "Run",
+  "activityKindCycling": "Cycle",
+  "activityKindOther": "Workout",
+  "activityDurationMinutes": "{count} min",
+  "@activityDurationMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activityConnectTitle": "Connect your activity",
+  "activityConnectBody": "Let LabWise read your steps, walking, running, and cycling so the calendar can show each day. It reads only — nothing is ever written back, and the data stays on your phone.",
+  "activityConnectButton": "Connect",
+  "activityHealthConnectBody": "Android needs the Health Connect app to share your activity. Install or update it, then come back here.",
+  "activityInstallHealthConnect": "Get Health Connect",
+  "activityRestartNeeded": "Activity tracking was just installed. Fully close the app and open it again to finish setting it up — a hot restart is not enough.",
+  "activityToday": "Today",
+  "activityOpenCalendar": "Calendar",
+  "activityConnectShort": "Read-only, stays on your phone",
+  "targetsTitle": "Your targets",
+  "targetsSubtitle": "Where each number comes from, and why it matters",
+  "targetsTapHint": "Why these numbers?",
+  "targetsInputsTitle": "Worked out from",
+  "targetsInputsBody": "Weight {weight} kg · Height {height} cm · Age {age}",
+  "@targetsInputsBody": {
+    "placeholders": {
+      "weight": {
+        "type": "String"
+      },
+      "height": {
+        "type": "String"
+      },
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "targetsInputsNote": "Change any of these in Profile and every target below updates.",
+  "targetBmiTitle": "Body mass index",
+  "targetBmiWhat": "Your weight divided by your height squared. It puts one number on the relationship between the two.",
+  "targetBmiWhy": "Every other target on this screen is tuned by which band you fall into, so it is the starting point rather than a score in itself.",
+  "targetBmiBands": "Under 18.5 is under range · 18.5 to 25 is healthy · 25 to 30 is above · 30 and over is well above.",
+  "targetBmiCaveat": "BMI cannot tell muscle from fat, so athletes often read high while being perfectly healthy. Treat it as a rough guide, not a verdict.",
+  "targetCaloriesTitle": "Daily calories",
+  "targetCaloriesWhat": "An estimate of what your body burns in a lightly active day, adjusted toward your goal.",
+  "targetCaloriesWhy": "Eating roughly this much keeps weight steady. The adjustment is deliberately small so progress is gradual rather than punishing.",
+  "targetCaloriesHow": "Calculated with the Mifflin-St Jeor equation from your weight, height, and age, multiplied by 1.45 for daily movement. Because the app does not ask your sex, the result is averaged between the male and female formulas, which can be off by roughly 80 kcal either way.",
+  "targetCaloriesAdjustUnder": "300 kcal was added to help you gain steadily.",
+  "targetCaloriesAdjustHealthy": "No adjustment — this is your maintenance level.",
+  "targetCaloriesAdjustAbove": "350 kcal was removed for gradual loss.",
+  "targetCaloriesAdjustWellAbove": "500 kcal was removed for steady, sustainable loss.",
+  "targetWaterTitle": "Water",
+  "targetWaterWhat": "Roughly 33 ml for every kilogram you weigh, which is why a heavier body gets a larger figure.",
+  "targetWaterWhy": "Being even mildly short on fluid shows up as tiredness and headaches long before you feel thirsty, and it skews several blood markers.",
+  "targetWaterCaveat": "Drink more in heat, during exercise, or when unwell. Food contributes too, so this is not all from a glass.",
+  "targetStepsTitle": "Steps",
+  "targetStepsWhat": "A daily movement target, starting from 8,000 and shifted for your situation.",
+  "targetStepsWhy": "Regular walking does more for blood pressure, blood sugar, and mood than almost any other single habit, and it needs no equipment.",
+  "targetStepsHow": "Raised for an above-range BMI, lowered again when well above so joints are not overloaded at the start, reduced past 60, and raised for under-30s.",
+  "targetsClinicianTitle": "This is not medical advice",
+  "targetsClinicianBody": "These are general wellbeing estimates calculated on your phone from three numbers you typed in. They know nothing about your medical history, medication, pregnancy, or conditions. Talk to a clinician before acting on them.",
+  "statusGood": "Looking good",
+  "statusWatch": "Worth an eye",
+  "statusAttention": "Needs attention",
+  "statusUnknownBody": "Add your details or upload a report to see where you stand.",
+  "statusFlagged": "{count, plural, one{{count} value to review} other{{count} values to review}}",
+  "@statusFlagged": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statusAllClear": "All {count} values in range",
+  "@statusAllClear": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statusNoReport": "No report yet",
+  "statusBmi": "BMI {bmi}",
+  "@statusBmi": {
+    "placeholders": {
+      "bmi": {
+        "type": "String"
+      }
+    }
+  },
+  "statusAddDetails": "Add your {fields}",
+  "@statusAddDetails": {
+    "placeholders": {
+      "fields": {
+        "type": "String"
+      }
+    }
+  },
+  "statusTitle": "Your health right now"
+}

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "414398000383",
+    "project_id": "labwise-e7923",
+    "storage_bucket": "labwise-e7923.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414398000383:android:108a5d3eab005ca55cf0ca",
+        "android_client_info": {
+          "package_name": "com.healthy.healthy_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414398000383-h04l2r7pmd7ng2r5bobjmfn08qahrdno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr4hbrluKFartUso5aG6iLWAunL6dbFy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414398000383-h04l2r7pmd7ng2r5bobjmfn08qahrdno.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "414398000383-38tmu94r0di7rang5j2mce0pil61bnq1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.healthy.healthyProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

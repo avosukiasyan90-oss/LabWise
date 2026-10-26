@@ -1,0 +1,135 @@
+Ф.И.О. Аветик Сукиасян Армен
+Год/месяц/число рождения: 1990
+Пол: мужской
+Адрес:
+Контакт.данные: 93078780
+Идентификационный N 871380
+Дата взятия б/м/ час 09.10.2026 15:09
+Биоматериал: урогениталные выделения
+Дата выдачи протокола: 12.10.2026 17:00
+Метод- Microscopic
+Анализатор-Microscope Olimpus
+РЕЗУЛЬТАТЫ МИКРОСКОПИЧЕСКИХ ИССЛЕДОВАНИЙ УРОГЕНИТАЛЬНЫХ МАЗКОВ
+НАИМЕНОВАНИЕ U V
+1 Лейкоциты 0-2 в п/з
+2 Эпителиальные клетки 10-15 в п/з
+3 Гонорея не обнаружена
+4 Слизь умеренная
+5 Микрофлора умеренная кокк.
+6 Дрожжеподобные грибки не обнаружены
+7 Трихомоноз не обнаружен
+8 Гарднереллез не обнаружен
+9 Прочие возбудители не обнаружены
+Дата 09.10.2026
+Ф.И.О. Аветик Сукиасян Армен
+Год/месяц/число рождения: 1990
+Пол: мужской
+Адрес:
+Контакт.данные: 93078780
+Идентификационный N 871380
+Дата взятия б/м/ час 09.10.2026 15:09
+Дата выдачи протокола: 12.10.2026 17:00
+Метод- PCR
+Анализатор-CFX+96 Real-Time
+АНДРОФЛОР
+ИССЛЕДОВАНИE БИОЦЕНОЗА УРОГЕНИТАЛЬНОГО ТРАКТА МУЖЧИН (метод - PCR)
+наименование результат норма
+Геномная ДНК человека 10
+4.3
+>10
+4
+Общая бактериальная масса 10
+6.3
+>10
+3
+Lactobacillus spp.
+Lactobacillus spp. не обнаружено <10% ОКБ
+НОРМОФЛОРА
+Staphylococcus spp 10
+2.7
+Streptococcus spp. 10
+5.7
+Corynebacterium spp. 10
+5.2
+Сумма: Нормофлора 10
+5.8
+ 31.6% 60% и более
+УПМ
+Gardnerella vaginalis не обнаружено не обнаружено
+Megasphaera spp./Veillonella spp./Dialister
+spp. 10
+5.0
+<10
+4
+Sneathia spp./Leptotrichia
+spp./Fusobacterium spp. 10
+1.9
+<10
+3
+Ureaplasma urealyticum не обнаружено не обнаружено
+Ureaplasma parvum 10
+4.3
+не обнаружено
+Mycoplasma hominis не обнаружено не обнаружено
+Atopobium cluster 10
+2.7
+<10
+3
+Сумма: УПМ 10
+5.0
+ 5.0%
+УПМ АНАЭРОБЫ
+Bascteroides spp./Porphyromonas
+spp./Prevotella spp. 10
+5.5
+<10
+3
+Anaerococcus spp. 10
+4.8
+<10
+4
+Peptostreptococcus spp./Parvimonas spp. 10
+5.3
+<10
+4
+Eubacterium spp. 10
+5.0
+<10
+4
+Сумма: УПМ анаэробы 10
+5.8
+ 31.6%
+УПМ Haemophilus spp.
+Haemophilus spp. 10
+2.0
+<10
+3
+3
+наименование результат норма
+УПМ Pseudomonas aeruginosa/Ralstonia spp./Burkholderia spp
+Pseudomonas aeruginosa/Ralstonia
+spp./Burkholderia spp. не обнаружено <10
+3
+УПМ Enterobacteriaceae/Enterococcus spp.
+Enterobacteriaceae/Enterococcus spp. 10
+4.5
+<10
+4
+ДРОЖЖЕПОДОБНЫЕ ГРИБЫ
+Candida spp. 10
+4.3
+<10
+4
+ПАТОГЕННЫЕ МИКРООРГАНИЗМЫ
+наименование результат норма
+Mycoplasma genitalium не обнаружено не обнаружено
+Trichomonas vaginalis не обнаружено не обнаружено
+Neisseria gonorrhoeae не обнаружено не обнаружено
+Chlamydia trachomatis не обнаружено не обнаружено
+ВИРУСЫ
+наименование результат
+Herpes Simplex Virus Type 1 (HSV-1) не обнаружено не обнаружено
+Herpes Simplex Virus Type 2 (HSV-2) не обнаружено не обнаружено
+Citomegalovirus (CMV) не обнаружено не обнаружено
+♦- УПМ - Условно Патогенные Микроорганизмы
+Дата 12.10.2026
