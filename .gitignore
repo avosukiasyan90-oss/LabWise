@@ -43,3 +43,19 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots/**/*.png
+**/fastlane/test_output
+**/fastlane/.env*
+/vendor/bundle/
+
+# Delivery credentials — never commit these
+**/fastlane/play-store-key.json
+**/*.p8
+**/*.p12
+**/*.jks
+**/*.keystore
+android/key.properties

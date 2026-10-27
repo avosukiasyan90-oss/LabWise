@@ -473,5 +473,105 @@
       }
     }
   },
-  "statusTitle": "Ваше состояние сейчас"
+  "statusTitle": "Ваше состояние сейчас",
+  "tabMeds": "Лекарства",
+  "medsTitle": "Лекарства",
+  "medsSubtitlePending": "Принято сегодня: {taken} из {total}",
+  "@medsSubtitlePending": {
+    "placeholders": {
+      "taken": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "medsSubtitleAllDone": "На сегодня всё принято",
+  "medsSubtitleNoneToday": "На сегодня ничего не запланировано",
+  "medsEmptyTitle": "Лекарств пока нет",
+  "medsEmptyBody": "Добавьте таблетку, витамин или добавку, и приложение напомнит, когда придёт время приёма.",
+  "medsAdd": "Добавить лекарство",
+  "medsEdit": "Изменить лекарство",
+  "medsFieldName": "Название",
+  "medsFieldNameHint": "Витамин D, Омепразол…",
+  "medsFieldCount": "Сколько за приём",
+  "medsFieldNotes": "Заметки (необязательно)",
+  "medsFieldFrequency": "Как часто",
+  "medsFieldTimes": "Время напоминаний",
+  "medsAddTime": "Добавить время",
+  "medsFieldStart": "Начало",
+  "medsFieldEnd": "Окончание (необязательно)",
+  "medsNoEnd": "Без даты окончания",
+  "medsFrequencyDaily": "Каждый день",
+  "medsFrequencyEveryOther": "Через день",
+  "medsFrequencyWeekly": "Раз в неделю",
+  "medsFrequencyAsNeeded": "Только при необходимости",
+  "medsSave": "Сохранить",
+  "medsDelete": "Удалить",
+  "medsDeleteTitle": "Удалить это лекарство?",
+  "medsDeleteBody": "{name} и его напоминания будут удалены.",
+  "@medsDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "medsStateOverdue": "Пропущено",
+  "medsStateUpcoming": "Предстоит",
+  "medsStateDone": "Принято",
+  "medsStateInactive": "Не сегодня",
+  "medsDoseCount": "{count, plural, one{{count} таблетка} few{{count} таблетки} other{{count} таблеток}}",
+  "@medsDoseCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "medsTakenOf": "{taken}/{total}",
+  "@medsTakenOf": {
+    "placeholders": {
+      "taken": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "medsNextDose": "Следующий приём в {time}",
+  "@medsNextDose": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "medsNextOn": "Следующий приём {date}",
+  "@medsNextOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "medsAsNeededHint": "Принимается при необходимости — без напоминаний",
+  "medsMarkTaken": "Отметить как принятое",
+  "medsUndo": "Отменить",
+  "medsNeedsName": "Укажите название лекарства.",
+  "medsNeedsTime": "Добавьте хотя бы одно время напоминания.",
+  "medsNotificationsOffTitle": "Напоминания выключены",
+  "medsNotificationsOffBody": "Разрешите уведомления, чтобы приложение напоминало о приёме.",
+  "medsEnableNotifications": "Разрешить уведомления",
+  "medsStateDueNow": "Пора принять",
+  "doseTimeTitle": "Время напоминания",
+  "doseTimeQuick": "Частые варианты",
+  "doseTimeMorning": "Утро",
+  "doseTimeMidday": "День",
+  "doseTimeEvening": "Вечер",
+  "doseTimeNight": "Ночь",
+  "doseTimeSet": "Выбрать время",
+  "doseTimeAlready": "Это время уже добавлено."
 }

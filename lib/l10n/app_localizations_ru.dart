@@ -1214,4 +1214,182 @@ class AppL10nRu extends AppL10n {
 
   @override
   String get statusTitle => 'Ваше состояние сейчас';
+
+  @override
+  String get tabMeds => 'Лекарства';
+
+  @override
+  String get medsTitle => 'Лекарства';
+
+  @override
+  String medsSubtitlePending(int taken, int total) {
+    return 'Принято сегодня: $taken из $total';
+  }
+
+  @override
+  String get medsSubtitleAllDone => 'На сегодня всё принято';
+
+  @override
+  String get medsSubtitleNoneToday => 'На сегодня ничего не запланировано';
+
+  @override
+  String get medsEmptyTitle => 'Лекарств пока нет';
+
+  @override
+  String get medsEmptyBody =>
+      'Добавьте таблетку, витамин или добавку, и приложение напомнит, когда придёт время приёма.';
+
+  @override
+  String get medsAdd => 'Добавить лекарство';
+
+  @override
+  String get medsEdit => 'Изменить лекарство';
+
+  @override
+  String get medsFieldName => 'Название';
+
+  @override
+  String get medsFieldNameHint => 'Витамин D, Омепразол…';
+
+  @override
+  String get medsFieldCount => 'Сколько за приём';
+
+  @override
+  String get medsFieldNotes => 'Заметки (необязательно)';
+
+  @override
+  String get medsFieldFrequency => 'Как часто';
+
+  @override
+  String get medsFieldTimes => 'Время напоминаний';
+
+  @override
+  String get medsAddTime => 'Добавить время';
+
+  @override
+  String get medsFieldStart => 'Начало';
+
+  @override
+  String get medsFieldEnd => 'Окончание (необязательно)';
+
+  @override
+  String get medsNoEnd => 'Без даты окончания';
+
+  @override
+  String get medsFrequencyDaily => 'Каждый день';
+
+  @override
+  String get medsFrequencyEveryOther => 'Через день';
+
+  @override
+  String get medsFrequencyWeekly => 'Раз в неделю';
+
+  @override
+  String get medsFrequencyAsNeeded => 'Только при необходимости';
+
+  @override
+  String get medsSave => 'Сохранить';
+
+  @override
+  String get medsDelete => 'Удалить';
+
+  @override
+  String get medsDeleteTitle => 'Удалить это лекарство?';
+
+  @override
+  String medsDeleteBody(String name) {
+    return '$name и его напоминания будут удалены.';
+  }
+
+  @override
+  String get medsStateOverdue => 'Пропущено';
+
+  @override
+  String get medsStateUpcoming => 'Предстоит';
+
+  @override
+  String get medsStateDone => 'Принято';
+
+  @override
+  String get medsStateInactive => 'Не сегодня';
+
+  @override
+  String medsDoseCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count таблеток',
+      few: '$count таблетки',
+      one: '$count таблетка',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String medsTakenOf(int taken, int total) {
+    return '$taken/$total';
+  }
+
+  @override
+  String medsNextDose(String time) {
+    return 'Следующий приём в $time';
+  }
+
+  @override
+  String medsNextOn(String date) {
+    return 'Следующий приём $date';
+  }
+
+  @override
+  String get medsAsNeededHint =>
+      'Принимается при необходимости — без напоминаний';
+
+  @override
+  String get medsMarkTaken => 'Отметить как принятое';
+
+  @override
+  String get medsUndo => 'Отменить';
+
+  @override
+  String get medsNeedsName => 'Укажите название лекарства.';
+
+  @override
+  String get medsNeedsTime => 'Добавьте хотя бы одно время напоминания.';
+
+  @override
+  String get medsNotificationsOffTitle => 'Напоминания выключены';
+
+  @override
+  String get medsNotificationsOffBody =>
+      'Разрешите уведомления, чтобы приложение напоминало о приёме.';
+
+  @override
+  String get medsEnableNotifications => 'Разрешить уведомления';
+
+  @override
+  String get medsStateDueNow => 'Пора принять';
+
+  @override
+  String get doseTimeTitle => 'Время напоминания';
+
+  @override
+  String get doseTimeQuick => 'Частые варианты';
+
+  @override
+  String get doseTimeMorning => 'Утро';
+
+  @override
+  String get doseTimeMidday => 'День';
+
+  @override
+  String get doseTimeEvening => 'Вечер';
+
+  @override
+  String get doseTimeNight => 'Ночь';
+
+  @override
+  String get doseTimeSet => 'Выбрать время';
+
+  @override
+  String get doseTimeAlready => 'Это время уже добавлено.';
 }

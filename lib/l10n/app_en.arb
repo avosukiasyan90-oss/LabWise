@@ -612,5 +612,105 @@
       }
     }
   },
-  "statusTitle": "Your health right now"
+  "statusTitle": "Your health right now",
+  "tabMeds": "Meds",
+  "medsTitle": "Medicine",
+  "medsSubtitlePending": "{taken} of {total} taken today",
+  "@medsSubtitlePending": {
+    "placeholders": {
+      "taken": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "medsSubtitleAllDone": "All done for today",
+  "medsSubtitleNoneToday": "Nothing scheduled today",
+  "medsEmptyTitle": "No medicines yet",
+  "medsEmptyBody": "Add a tablet, vitamin, or supplement and the app will remind you when a dose is due.",
+  "medsAdd": "Add medicine",
+  "medsEdit": "Edit medicine",
+  "medsFieldName": "Name",
+  "medsFieldNameHint": "Vitamin D, Omeprazole…",
+  "medsFieldCount": "How many per dose",
+  "medsFieldNotes": "Notes (optional)",
+  "medsFieldFrequency": "How often",
+  "medsFieldTimes": "Reminder times",
+  "medsAddTime": "Add a time",
+  "medsFieldStart": "Starts",
+  "medsFieldEnd": "Ends (optional)",
+  "medsNoEnd": "No end date",
+  "medsFrequencyDaily": "Every day",
+  "medsFrequencyEveryOther": "Every other day",
+  "medsFrequencyWeekly": "Weekly",
+  "medsFrequencyAsNeeded": "Only when needed",
+  "medsSave": "Save",
+  "medsDelete": "Delete",
+  "medsDeleteTitle": "Delete this medicine?",
+  "medsDeleteBody": "{name} and its reminders will be removed.",
+  "@medsDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "medsStateOverdue": "Missed",
+  "medsStateUpcoming": "Upcoming",
+  "medsStateDone": "Taken",
+  "medsStateInactive": "Not today",
+  "medsDoseCount": "{count, plural, one{{count} tablet} other{{count} tablets}}",
+  "@medsDoseCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "medsTakenOf": "{taken}/{total}",
+  "@medsTakenOf": {
+    "placeholders": {
+      "taken": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "medsNextDose": "Next at {time}",
+  "@medsNextDose": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "medsNextOn": "Next on {date}",
+  "@medsNextOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "medsAsNeededHint": "Taken only when needed — no reminders",
+  "medsMarkTaken": "Mark as taken",
+  "medsUndo": "Undo",
+  "medsNeedsName": "Give the medicine a name.",
+  "medsNeedsTime": "Add at least one reminder time.",
+  "medsNotificationsOffTitle": "Reminders are off",
+  "medsNotificationsOffBody": "Allow notifications so the app can remind you when a dose is due.",
+  "medsEnableNotifications": "Allow notifications",
+  "medsStateDueNow": "Due now",
+  "doseTimeTitle": "Reminder time",
+  "doseTimeQuick": "Common times",
+  "doseTimeMorning": "Morning",
+  "doseTimeMidday": "Midday",
+  "doseTimeEvening": "Evening",
+  "doseTimeNight": "Night",
+  "doseTimeSet": "Set time",
+  "doseTimeAlready": "That time is already added."
 }

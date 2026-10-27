@@ -6,15 +6,21 @@ import '../models/medical_report.dart';
 import '../models/user_profile.dart';
 import '../services/auth_service.dart';
 import '../services/cloud_history_service.dart';
+import '../models/medication.dart';
 import '../services/activity_controller.dart';
+import '../services/app_log.dart';
 import '../services/activity_store.dart';
 import '../services/health_service.dart';
+import '../services/cloud_medication_service.dart';
+import '../services/medication_store.dart';
+import '../services/notification_service.dart';
 import '../services/history_store.dart';
 import '../services/locale_controller.dart';
 import '../services/profile_service.dart';
 import '../theme/app_theme.dart';
 import 'analyze_screen.dart';
 import 'history_screen.dart';
+import 'medications_screen.dart';
 import 'plan_screen.dart';
 import 'profile_screen.dart';
 import 'profile_setup_screen.dart';
@@ -48,7 +54,16 @@ class _HomeShellState extends State<HomeShell> {
     healthService: HealthService(),
     store: widget.activityStore,
   );
-  int _index = 0;
+  final _notifications = NotificationService();
+  List<Medication> _medications = [];
+  bool _notificationsAllowed = true;
+  static const _tabAnalyze = 0;
+  static const _tabHistory = 1;
+  static const _tabPlan = 2;
+  static const _tabMeds = 3;
+  static const _tabProfile = 4;
+
+  int _index = _tabAnalyze;
   List<MedicalReport> _reports = [];
   UserProfile? _profile;
   bool _loading = true;
@@ -67,6 +82,7 @@ class _HomeShellState extends State<HomeShell> {
 
   Future<void> _bootstrap() async {
     setState(() => _loading = true);
+    await _loadMedications();
 
     final profile = await widget.profileService.loadForUser(widget.user);
     if (mounted) setState(() => _profile = profile);
@@ -131,6 +147,100 @@ class _HomeShellState extends State<HomeShell> {
         ),
       ),
     );
+  }
+
+  CloudMedicationService? _medicationSync;
+
+  Future<CloudMedicationService> _medicationService() async {
+    return _medicationSync ??= CloudMedicationService(
+      local: await MedicationStore.create(),
+    );
+  }
+
+  /// Tapping a reminder opens the medicine list and records the dose.
+  ///
+  /// The tab switch happens first and regardless of whether the dose can
+  /// still be matched, so a tap always lands somewhere sensible.
+  Future<void> _markDoseFromReminder(String medicationId, DateTime at) async {
+    if (mounted) setState(() => _index = _tabMeds);
+
+    final match = _medications.where((m) => m.id == medicationId);
+    if (match.isEmpty) {
+      AppLog.app.warn('Reminder referenced a medicine that is gone');
+      return;
+    }
+    await _toggleDose(match.first, at, true);
+  }
+
+  Future<void> _loadMedications() async {
+    _notifications.onDoseTap = (id, at) => _markDoseFromReminder(id, at);
+
+    final service = await _medicationService();
+    final medications = await service.load(widget.user.uid);
+    final allowed = await _notifications.hasPermission();
+    if (!mounted) return;
+    setState(() {
+      _medications = medications;
+      _notificationsAllowed = allowed;
+    });
+    // Asking up front, rather than on the next save, means a user who already
+    // has medicines from a previous install is prompted on first launch.
+    if (!allowed && medications.any((m) => m.isScheduled)) {
+      await _requestNotifications();
+      return;
+    }
+
+    // Local notifications expire from the OS queue, so top them up each launch.
+    await _notifications.rescheduleAll(medications);
+
+    // A tap that launched the app arrives before the handler was attached.
+    await _notifications.consumeLaunchPayload();
+  }
+
+  Future<void> _saveMedication(Medication medication) async {
+    final service = await _medicationService();
+    final next = await service.save(
+      uid: widget.user.uid,
+      medication: medication,
+    );
+    if (mounted) setState(() => _medications = next);
+
+    // Permission first, otherwise the reminders are scheduled into a void.
+    if (!_notificationsAllowed && medication.isScheduled) {
+      await _requestNotifications();
+      return;
+    }
+    await _notifications.rescheduleAll(next);
+  }
+
+  Future<void> _deleteMedication(String id) async {
+    final service = await _medicationService();
+    final next = await service.remove(uid: widget.user.uid, id: id);
+    if (mounted) setState(() => _medications = next);
+    await _notifications.rescheduleAll(next);
+  }
+
+  Future<void> _toggleDose(
+    Medication medication,
+    DateTime at,
+    bool taken,
+  ) async {
+    final updated = medication.markTaken(at, taken: taken);
+    final service = await _medicationService();
+    final next = await service.save(
+      uid: widget.user.uid,
+      medication: updated,
+    );
+    if (mounted) setState(() => _medications = next);
+    // A dose marked taken should stop reminding about itself.
+    await _notifications.rescheduleAll(next);
+  }
+
+  Future<void> _requestNotifications() async {
+    final granted = await _notifications.requestPermission();
+    if (!mounted) return;
+    setState(() => _notificationsAllowed = granted);
+    if (granted) await _notifications.rescheduleAll(_medications);
   }
 
   Future<void> _saveProfile(UserProfile profile) async {
@@ -231,7 +341,7 @@ class _HomeShellState extends State<HomeShell> {
                       child: Row(
                         children: [
                           GestureDetector(
-                            onTap: () => setState(() => _index = 3),
+                            onTap: () => setState(() => _index = _tabProfile),
                             child: CircleAvatar(
                               radius: 18,
                               backgroundColor: AppColors.mint,
@@ -277,8 +387,8 @@ class _HomeShellState extends State<HomeShell> {
                           onReportSaved: _saveReport,
                           existingReports: _reports,
                           profile: profile,
-                          onOpenHistory: () => setState(() => _index = 1),
-                          onOpenPlan: () => setState(() => _index = 2),
+                          onOpenHistory: () => setState(() => _index = _tabHistory),
+                          onOpenPlan: () => setState(() => _index = _tabPlan),
                         ),
                         HistoryScreen(
                           reports: _reports,
@@ -288,7 +398,15 @@ class _HomeShellState extends State<HomeShell> {
                           profile: profile,
                           reports: _reports,
                           activityController: _activityController,
-                          onOpenProfile: () => setState(() => _index = 3),
+                          onOpenProfile: () => setState(() => _index = _tabProfile),
+                        ),
+                        MedicationsScreen(
+                          medications: _medications,
+                          onSave: _saveMedication,
+                          onDelete: _deleteMedication,
+                          onToggleDose: _toggleDose,
+                          notificationsAllowed: _notificationsAllowed,
+                          onEnableNotifications: _requestNotifications,
                         ),
                         ProfileScreen(
                           profile: profile,
@@ -328,6 +446,11 @@ class _HomeShellState extends State<HomeShell> {
             icon: const Icon(Icons.auto_awesome_outlined),
             selectedIcon: const Icon(Icons.auto_awesome_rounded),
             label: l10n.tabPlan,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.medication_outlined),
+            selectedIcon: const Icon(Icons.medication_rounded),
+            label: l10n.tabMeds,
           ),
           NavigationDestination(
             icon: const Icon(Icons.person_outline_rounded),

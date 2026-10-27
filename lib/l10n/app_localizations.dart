@@ -2070,6 +2070,318 @@ abstract class AppL10n {
   /// In en, this message translates to:
   /// **'Your health right now'**
   String get statusTitle;
+
+  /// No description provided for @tabMeds.
+  ///
+  /// In en, this message translates to:
+  /// **'Meds'**
+  String get tabMeds;
+
+  /// No description provided for @medsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicine'**
+  String get medsTitle;
+
+  /// No description provided for @medsSubtitlePending.
+  ///
+  /// In en, this message translates to:
+  /// **'{taken} of {total} taken today'**
+  String medsSubtitlePending(int taken, int total);
+
+  /// No description provided for @medsSubtitleAllDone.
+  ///
+  /// In en, this message translates to:
+  /// **'All done for today'**
+  String get medsSubtitleAllDone;
+
+  /// No description provided for @medsSubtitleNoneToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing scheduled today'**
+  String get medsSubtitleNoneToday;
+
+  /// No description provided for @medsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No medicines yet'**
+  String get medsEmptyTitle;
+
+  /// No description provided for @medsEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a tablet, vitamin, or supplement and the app will remind you when a dose is due.'**
+  String get medsEmptyBody;
+
+  /// No description provided for @medsAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add medicine'**
+  String get medsAdd;
+
+  /// No description provided for @medsEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit medicine'**
+  String get medsEdit;
+
+  /// No description provided for @medsFieldName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get medsFieldName;
+
+  /// No description provided for @medsFieldNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Vitamin D, Omeprazole…'**
+  String get medsFieldNameHint;
+
+  /// No description provided for @medsFieldCount.
+  ///
+  /// In en, this message translates to:
+  /// **'How many per dose'**
+  String get medsFieldCount;
+
+  /// No description provided for @medsFieldNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes (optional)'**
+  String get medsFieldNotes;
+
+  /// No description provided for @medsFieldFrequency.
+  ///
+  /// In en, this message translates to:
+  /// **'How often'**
+  String get medsFieldFrequency;
+
+  /// No description provided for @medsFieldTimes.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder times'**
+  String get medsFieldTimes;
+
+  /// No description provided for @medsAddTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a time'**
+  String get medsAddTime;
+
+  /// No description provided for @medsFieldStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts'**
+  String get medsFieldStart;
+
+  /// No description provided for @medsFieldEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends (optional)'**
+  String get medsFieldEnd;
+
+  /// No description provided for @medsNoEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'No end date'**
+  String get medsNoEnd;
+
+  /// No description provided for @medsFrequencyDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Every day'**
+  String get medsFrequencyDaily;
+
+  /// No description provided for @medsFrequencyEveryOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Every other day'**
+  String get medsFrequencyEveryOther;
+
+  /// No description provided for @medsFrequencyWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get medsFrequencyWeekly;
+
+  /// No description provided for @medsFrequencyAsNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'Only when needed'**
+  String get medsFrequencyAsNeeded;
+
+  /// No description provided for @medsSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get medsSave;
+
+  /// No description provided for @medsDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get medsDelete;
+
+  /// No description provided for @medsDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this medicine?'**
+  String get medsDeleteTitle;
+
+  /// No description provided for @medsDeleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} and its reminders will be removed.'**
+  String medsDeleteBody(String name);
+
+  /// No description provided for @medsStateOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed'**
+  String get medsStateOverdue;
+
+  /// No description provided for @medsStateUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get medsStateUpcoming;
+
+  /// No description provided for @medsStateDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Taken'**
+  String get medsStateDone;
+
+  /// No description provided for @medsStateInactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Not today'**
+  String get medsStateInactive;
+
+  /// No description provided for @medsDoseCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} tablet} other{{count} tablets}}'**
+  String medsDoseCount(int count);
+
+  /// No description provided for @medsTakenOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{taken}/{total}'**
+  String medsTakenOf(int taken, int total);
+
+  /// No description provided for @medsNextDose.
+  ///
+  /// In en, this message translates to:
+  /// **'Next at {time}'**
+  String medsNextDose(String time);
+
+  /// No description provided for @medsNextOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Next on {date}'**
+  String medsNextOn(String date);
+
+  /// No description provided for @medsAsNeededHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Taken only when needed — no reminders'**
+  String get medsAsNeededHint;
+
+  /// No description provided for @medsMarkTaken.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as taken'**
+  String get medsMarkTaken;
+
+  /// No description provided for @medsUndo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get medsUndo;
+
+  /// No description provided for @medsNeedsName.
+  ///
+  /// In en, this message translates to:
+  /// **'Give the medicine a name.'**
+  String get medsNeedsName;
+
+  /// No description provided for @medsNeedsTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Add at least one reminder time.'**
+  String get medsNeedsTime;
+
+  /// No description provided for @medsNotificationsOffTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders are off'**
+  String get medsNotificationsOffTitle;
+
+  /// No description provided for @medsNotificationsOffBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow notifications so the app can remind you when a dose is due.'**
+  String get medsNotificationsOffBody;
+
+  /// No description provided for @medsEnableNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow notifications'**
+  String get medsEnableNotifications;
+
+  /// No description provided for @medsStateDueNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Due now'**
+  String get medsStateDueNow;
+
+  /// No description provided for @doseTimeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get doseTimeTitle;
+
+  /// No description provided for @doseTimeQuick.
+  ///
+  /// In en, this message translates to:
+  /// **'Common times'**
+  String get doseTimeQuick;
+
+  /// No description provided for @doseTimeMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning'**
+  String get doseTimeMorning;
+
+  /// No description provided for @doseTimeMidday.
+  ///
+  /// In en, this message translates to:
+  /// **'Midday'**
+  String get doseTimeMidday;
+
+  /// No description provided for @doseTimeEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening'**
+  String get doseTimeEvening;
+
+  /// No description provided for @doseTimeNight.
+  ///
+  /// In en, this message translates to:
+  /// **'Night'**
+  String get doseTimeNight;
+
+  /// No description provided for @doseTimeSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Set time'**
+  String get doseTimeSet;
+
+  /// No description provided for @doseTimeAlready.
+  ///
+  /// In en, this message translates to:
+  /// **'That time is already added.'**
+  String get doseTimeAlready;
 }
 
 class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {

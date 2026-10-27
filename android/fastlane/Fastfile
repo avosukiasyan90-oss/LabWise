@@ -1,0 +1,92 @@
+# Android delivery for LabWise Health.
+#
+# Google Play requires an Android App Bundle (.aab) for release; the .apk lane
+# exists for direct installs and Firebase App Distribution, which cannot use a
+# bundle.
+#
+# Uploading to Play needs a service account key. Create it under
+# Play Console > Setup > API access, grant it release permissions, and point
+# PLAY_STORE_JSON_KEY at the downloaded JSON.
+
+default_platform(:android)
+
+FIREBASE_APP_ID = "1:414398000383:android:108a5d3eab005ca55cf0ca"
+AAB_PATH = "../build/app/outputs/bundle/release/app-release.aab"
+APK_PATH = "../build/app/outputs/flutter-apk/app-release.apk"
+
+platform :android do
+  desc "Fail early if the release build would be signed with debug keys"
+  private_lane :verify_signing do
+    gradle_file = File.join(__dir__, "..", "app", "build.gradle.kts")
+    if File.read(gradle_file).include?('signingConfigs.getByName("debug")')
+      UI.user_error!(
+        "Release builds are still signed with the debug keystore. " \
+        "Google Play rejects these. Create an upload keystore, add " \
+        "android/key.properties, and point the release signingConfig at it."
+      )
+    end
+  end
+
+  desc "Build the release App Bundle for Google Play"
+  lane :aab do
+    verify_signing
+    Dir.chdir("../..") do
+      sh("flutter", "clean")
+      sh("flutter", "pub", "get")
+      sh("flutter", "build", "appbundle", "--release")
+    end
+    UI.success("Bundle at build/app/outputs/bundle/release/app-release.aab")
+  end
+
+  desc "Build a release APK for direct install or tester distribution"
+  lane :apk do
+    verify_signing
+    Dir.chdir("../..") do
+      sh("flutter", "pub", "get")
+      sh("flutter", "build", "apk", "--release")
+    end
+    UI.success("APK at build/app/outputs/flutter-apk/app-release.apk")
+  end
+
+  desc "Upload to the Play internal testing track"
+  lane :beta do
+    aab
+    upload_to_play_store(
+      track: "internal",
+      aab: AAB_PATH,
+      release_status: "draft",
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+    UI.success("Uploaded to the internal track as a draft.")
+  end
+
+  desc "Upload to Google Play production"
+  lane :release do
+    aab
+    upload_to_play_store(
+      track: "production",
+      aab: AAB_PATH,
+      # Staged rollout: a bad build reaches 10% of users, not all of them.
+      rollout: ENV["ROLLOUT"] || "0.1",
+      release_status: "inProgress",
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+    UI.success("Released to production at #{ENV['ROLLOUT'] || '0.1'} rollout.")
+  end
+
+  desc "Share an APK with testers via Firebase App Distribution"
+  lane :firebase do
+    apk
+    # See the iOS Fastfile for why this shells out to the Firebase CLI
+    # instead of using the fastlane plugin.
+    sh("firebase", "appdistribution:distribute", File.expand_path(APK_PATH),
+       "--app", FIREBASE_APP_ID,
+       "--groups", ENV["FIREBASE_GROUPS"] || "testers",
+       "--release-notes", ENV["RELEASE_NOTES"] || "Internal build")
+    UI.success("Shared via Firebase App Distribution.")
+  end
+end

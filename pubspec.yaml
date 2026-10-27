@@ -1,7 +1,7 @@
 name: healthy_project
 description: Upload medical lab reports (PDF/Word) and get clear, actionable insights.
 publish_to: 'none'
-version: 1.0.0+2
+version: 1.0.0+10
 
 environment:
   sdk: ^3.12.2
@@ -36,6 +36,9 @@ dependencies:
   table_calendar: ^3.2.1
   package_info_plus: ^9.0.1
   device_info_plus: ^12.4.0
+  flutter_local_notifications: ^22.3.3
+  timezone: ^0.11.2
+  flutter_timezone: ^5.1.1
 
 dev_dependencies:
   flutter_test:
@@ -56,3 +59,22 @@ flutter_launcher_icons:
   adaptive_icon_background: "#0B6E6A"
   adaptive_icon_foreground: assets/icon/app_icon.png
   remove_alpha_ios: true
+
+
+  # Goal	Command
+  # TestFlight
+  # cd ios && bundle exec fastlane beta
+  #  App Store
+  # cd ios && bundle exec fastlane release
+  # Firebase (iOS testers)
+  # cd ios && bundle exec fastlane firebase
+  #  Android APK
+  # cd android && bundle exec fastlane apk
+  # Google Play internal
+  # cd android && bundle exec fastlane beta
+  #  Google Play production
+  # cd android && bundle exec fastlane release
+  #  Firebase (Android testers)
+  #  cd android && bundle exec fastlane firebase
+  # Tests before shipping
+  # cd ios && bundle exec fastlane check

@@ -1203,4 +1203,180 @@ class AppL10nEn extends AppL10n {
 
   @override
   String get statusTitle => 'Your health right now';
+
+  @override
+  String get tabMeds => 'Meds';
+
+  @override
+  String get medsTitle => 'Medicine';
+
+  @override
+  String medsSubtitlePending(int taken, int total) {
+    return '$taken of $total taken today';
+  }
+
+  @override
+  String get medsSubtitleAllDone => 'All done for today';
+
+  @override
+  String get medsSubtitleNoneToday => 'Nothing scheduled today';
+
+  @override
+  String get medsEmptyTitle => 'No medicines yet';
+
+  @override
+  String get medsEmptyBody =>
+      'Add a tablet, vitamin, or supplement and the app will remind you when a dose is due.';
+
+  @override
+  String get medsAdd => 'Add medicine';
+
+  @override
+  String get medsEdit => 'Edit medicine';
+
+  @override
+  String get medsFieldName => 'Name';
+
+  @override
+  String get medsFieldNameHint => 'Vitamin D, Omeprazole…';
+
+  @override
+  String get medsFieldCount => 'How many per dose';
+
+  @override
+  String get medsFieldNotes => 'Notes (optional)';
+
+  @override
+  String get medsFieldFrequency => 'How often';
+
+  @override
+  String get medsFieldTimes => 'Reminder times';
+
+  @override
+  String get medsAddTime => 'Add a time';
+
+  @override
+  String get medsFieldStart => 'Starts';
+
+  @override
+  String get medsFieldEnd => 'Ends (optional)';
+
+  @override
+  String get medsNoEnd => 'No end date';
+
+  @override
+  String get medsFrequencyDaily => 'Every day';
+
+  @override
+  String get medsFrequencyEveryOther => 'Every other day';
+
+  @override
+  String get medsFrequencyWeekly => 'Weekly';
+
+  @override
+  String get medsFrequencyAsNeeded => 'Only when needed';
+
+  @override
+  String get medsSave => 'Save';
+
+  @override
+  String get medsDelete => 'Delete';
+
+  @override
+  String get medsDeleteTitle => 'Delete this medicine?';
+
+  @override
+  String medsDeleteBody(String name) {
+    return '$name and its reminders will be removed.';
+  }
+
+  @override
+  String get medsStateOverdue => 'Missed';
+
+  @override
+  String get medsStateUpcoming => 'Upcoming';
+
+  @override
+  String get medsStateDone => 'Taken';
+
+  @override
+  String get medsStateInactive => 'Not today';
+
+  @override
+  String medsDoseCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tablets',
+      one: '$count tablet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String medsTakenOf(int taken, int total) {
+    return '$taken/$total';
+  }
+
+  @override
+  String medsNextDose(String time) {
+    return 'Next at $time';
+  }
+
+  @override
+  String medsNextOn(String date) {
+    return 'Next on $date';
+  }
+
+  @override
+  String get medsAsNeededHint => 'Taken only when needed — no reminders';
+
+  @override
+  String get medsMarkTaken => 'Mark as taken';
+
+  @override
+  String get medsUndo => 'Undo';
+
+  @override
+  String get medsNeedsName => 'Give the medicine a name.';
+
+  @override
+  String get medsNeedsTime => 'Add at least one reminder time.';
+
+  @override
+  String get medsNotificationsOffTitle => 'Reminders are off';
+
+  @override
+  String get medsNotificationsOffBody =>
+      'Allow notifications so the app can remind you when a dose is due.';
+
+  @override
+  String get medsEnableNotifications => 'Allow notifications';
+
+  @override
+  String get medsStateDueNow => 'Due now';
+
+  @override
+  String get doseTimeTitle => 'Reminder time';
+
+  @override
+  String get doseTimeQuick => 'Common times';
+
+  @override
+  String get doseTimeMorning => 'Morning';
+
+  @override
+  String get doseTimeMidday => 'Midday';
+
+  @override
+  String get doseTimeEvening => 'Evening';
+
+  @override
+  String get doseTimeNight => 'Night';
+
+  @override
+  String get doseTimeSet => 'Set time';
+
+  @override
+  String get doseTimeAlready => 'That time is already added.';
 }

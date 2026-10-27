@@ -1,0 +1,107 @@
+# iOS delivery for LabWise Health.
+#
+# Authentication: every lane that talks to Apple uses an App Store Connect API
+# key, which is the only way to upload without an interactive 2FA prompt.
+# Export these before running, or put them in ios/fastlane/.env (gitignored):
+#
+#   ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH   (path to the .p8 file)
+#
+# Create the key at App Store Connect > Users and Access > Integrations > Keys.
+
+default_platform(:ios)
+
+APP_ID = "com.healthy.healthyProject"
+FIREBASE_APP_ID = "1:414398000383:ios:c9e23eb3f14555de5cf0ca"
+IPA_PATH = "../build/ios/ipa/LabWise Health.ipa"
+
+platform :ios do
+  before_all do
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+  end
+
+  desc "Build the signed release IPA via Flutter"
+  private_lane :build_ipa do |options|
+    Dir.chdir("../..") do
+      sh("flutter", "clean") if options[:clean]
+      sh("flutter", "pub", "get")
+      sh("flutter", "build", "ipa", "--release",
+         "--export-method", options[:export_method] || "app-store")
+    end
+  end
+
+  desc "Authenticate with the App Store Connect API key"
+  private_lane :connect_api do
+    app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_KEY_PATH"),
+      in_house: false
+    )
+  end
+
+  desc "Bump the build number so App Store Connect accepts the upload"
+  lane :bump do
+    Dir.chdir("../..") do
+      # App Store Connect refuses a build number it has already seen.
+      sh("sed", "-i", "", "-E",
+         "s/^version: ([0-9.]+)\\+([0-9]+)$/version: \\1+$((\\2+1))/",
+         "pubspec.yaml")
+    end
+    UI.message("Build number bumped. Commit pubspec.yaml before releasing.")
+  end
+
+  desc "Upload a build to TestFlight"
+  lane :beta do
+    connect_api
+    build_ipa
+    upload_to_testflight(
+      ipa: IPA_PATH,
+      app_identifier: APP_ID,
+      skip_waiting_for_build_processing: true,
+      distribute_external: false,
+      # Processing takes minutes; waiting blocks CI for no benefit.
+      skip_submission: true
+    )
+    UI.success("Uploaded to TestFlight.")
+  end
+
+  desc "Upload a build to App Store Connect, ready for submission"
+  lane :release do
+    connect_api
+    build_ipa(clean: true)
+    upload_to_app_store(
+      ipa: IPA_PATH,
+      app_identifier: APP_ID,
+      # Metadata and screenshots stay managed in App Store Connect; uploading
+      # them from here would overwrite what you have already entered.
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: false,
+      precheck_include_in_app_purchases: false,
+      force: true
+    )
+    UI.success("Uploaded. Submit for review in App Store Connect when ready.")
+  end
+
+  desc "Share an ad-hoc build with testers via Firebase App Distribution"
+  lane :firebase do
+    build_ipa(export_method: "ad-hoc")
+    # Uses the Firebase CLI rather than the fastlane plugin: the plugin needs
+    # a Gemfile and bundler, which collides with the Homebrew Ruby that ships
+    # with fastlane on this machine. The CLI is already authenticated.
+    sh("firebase", "appdistribution:distribute", File.expand_path(IPA_PATH),
+       "--app", FIREBASE_APP_ID,
+       "--groups", ENV["FIREBASE_GROUPS"] || "testers",
+       "--release-notes", ENV["RELEASE_NOTES"] || "Internal build")
+    UI.success("Shared via Firebase App Distribution.")
+  end
+
+  desc "Run the Dart test suite and analyzer before shipping anything"
+  lane :check do
+    Dir.chdir("../..") do
+      sh("flutter", "pub", "get")
+      sh("dart", "analyze", "lib", "test")
+      sh("flutter", "test")
+    end
+  end
+end

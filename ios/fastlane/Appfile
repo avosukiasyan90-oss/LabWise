@@ -1,0 +1,4 @@
+app_identifier("com.healthy.healthyProject")
+apple_id(ENV["APPLE_ID"] || "avo.sukiasyan90@gmail.com")
+team_id("Q5R7F826AZ")
+itc_team_id(ENV["ITC_TEAM_ID"]) if ENV["ITC_TEAM_ID"]

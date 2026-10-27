@@ -198,18 +198,26 @@ class AuthService {
       );
     }
 
+    AppLog.auth.info('Requesting Google credential');
+
     late final GoogleSignInAccount googleUser;
     try {
       googleUser = await _googleSignIn.authenticate();
     } on GoogleSignInException catch (e) {
       if (e.code == GoogleSignInExceptionCode.canceled) {
+        AppLog.auth.info('Google sign-in cancelled by the user');
         throw StateError('Sign-in was canceled.');
       }
+      AppLog.auth.error('Google credential refused', data: {
+        'code': e.code.name,
+        'detail': e.description ?? '-',
+      });
       throw StateError('Google Sign-In failed: ${e.description ?? e.code.name}');
     }
 
     final idToken = googleUser.authentication.idToken;
     if (idToken == null || idToken.isEmpty) {
+      AppLog.auth.error('Google returned no ID token');
       throw StateError(
         'Google did not return an ID token. '
         'Enable Google in Firebase Authentication and ensure the Web client ID is set.',
@@ -244,8 +252,13 @@ class AuthService {
       );
     } on SignInWithAppleAuthorizationException catch (e) {
       if (e.code == AuthorizationErrorCode.canceled) {
+        AppLog.auth.info('Apple sign-in cancelled by the user');
         throw StateError('Sign-in was canceled.');
       }
+      AppLog.auth.error('Apple credential refused', data: {
+        'code': e.code.name,
+        'detail': e.message,
+      });
       throw StateError('Apple Sign-In failed: ${e.message}');
     }
 

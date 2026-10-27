@@ -1,0 +1,4 @@
+package_name("com.healthy.healthy_project")
+
+# Service account JSON downloaded from Play Console > Setup > API access.
+json_key_file(ENV["PLAY_STORE_JSON_KEY"] || "fastlane/play-store-key.json")
