@@ -1,50 +1,77 @@
-# LabWise
+# LabWise Health
 
-Upload a medical lab report (PDF or Word) and get a clear summary of common test markers, what they mean, and short next steps.
+Reads a lab report PDF or Word document and explains every value on it in
+plain language — what each marker means, whether it sits inside its reference
+range, and what the result generally suggests.
 
-## Features
+Parsing happens entirely on the device. The report is never uploaded for
+analysis, and no AI service is involved.
 
-- Upload **PDF** or **Word (.docx)** lab reports
-- Extracts recognizable markers across biochemistry, CBC, and urinalysis panels
-- Plain-language information, description, and suggestions per marker
-- **Google Sign-In** (sign up + login) via Firebase
-- **Cloud history** in Firestore + file backups in Storage (syncs across devices)
-- Analyze / History tabs with attached-file download
+## What it does
 
-> Educational support only — not a diagnosis. Always confirm with a clinician.
+- **Reads reports.** 94 markers across blood count, biochemistry, hormones,
+  urinalysis, urogenital panels, and Helicobacter breath tests. Armenian,
+  Russian, and English lab layouts.
+- **Tracks change.** Uploading a repeat of the same panel replaces the older
+  one and shows which values improved or declined, and by how much.
+- **Groups history.** Reports are filed into folders by test type.
+- **Builds a plan.** Meal timing, activity suggestions, and daily targets
+  derived from weight, height, and age.
+- **Shows activity.** A calendar of steps, walking, running, and cycling read
+  from Apple Health or Health Connect.
 
-## Firebase setup (required once)
+## How the analysis works
 
-I cannot create the Firebase project in your Google account without your browser login. Run this once on your Mac:
+There is no model and no inference. Report parsing is regular expressions
+against a hand-written marker catalogue; the wellness plan is the
+Mifflin-St Jeor equation plus BMI and age bands. The same inputs always
+produce the same output, which is why it works offline and why the medical
+text can be reviewed line by line.
 
-```bash
-./tool/setup_firebase.sh
-```
+Consequences worth knowing: a scanned or photographed PDF cannot be read,
+because there is no OCR and the file must contain real text. An unfamiliar
+lab layout may yield few or no values until its format is added.
 
-Then in [Firebase Console](https://console.firebase.google.com/):
+## Running it
 
-1. **Authentication → Sign-in method → Google → Enable**
-2. **Firestore Database → Create database**
-3. **Storage → Get started**
-
-The script writes `lib/firebase_options.dart`, `GoogleService-Info.plist`, and `google-services.json`.
-
-## Run
-
-```bash
+```sh
 flutter pub get
 flutter run
 ```
 
-## How to use
+Firebase configuration (`firebase_options.dart`, `google-services.json`,
+`GoogleService-Info.plist`) is committed — it is client configuration, not
+secret, and access is enforced by the Firestore rules in `firestore.rules`,
+which scope every document to its owner's uid.
 
-1. Tap **Continue with Google**
-2. Upload a lab PDF/DOCX from **Analyze**
-3. Review results + download the attached file
-4. Open **History** on any signed-in device
+The Telegram signup notifier is off unless a token is supplied at build time:
 
-## Privacy
+```sh
+flutter run --dart-define=TELEGRAM_BOT_TOKEN=... --dart-define=TELEGRAM_CHANNEL=@LabWiseApp
+```
 
-- Account auth uses Google via Firebase Auth
-- Reports sync to your own Firebase user path: `users/{uid}/reports`
-- Security rules allow only the signed-in owner to read/write their data
+## Platform requirements
+
+| | Minimum | Why |
+|---|---|---|
+| iOS | 15.0 | Cloud Firestore |
+| Android | API 26 | Health Connect |
+
+iOS also needs the HealthKit capability enabled on the Runner target for
+device builds, and Android needs Health Connect installed.
+
+## Tests
+
+```sh
+flutter test
+```
+
+126 tests covering report parsing against real fixtures, test-to-test
+comparison, the wellness planner, activity aggregation, localisation, and
+the signup notifier.
+
+## Not medical advice
+
+Everything the app says is general wellbeing information generated from the
+numbers on a document and three values the user typed in. It knows nothing
+about medical history, medication, or conditions.

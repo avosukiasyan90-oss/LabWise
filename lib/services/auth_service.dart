@@ -173,6 +173,20 @@ class AuthService {
     String? clientId,
     String? serverClientId,
   }) async {
+    final credential = await _googleCredential(
+      clientId: clientId,
+      serverClientId: serverClientId,
+    );
+    return _completeSignIn(
+      credential: credential,
+      provider: AuthProviderKind.google,
+    );
+  }
+
+  Future<AuthCredential> _googleCredential({
+    String? clientId,
+    String? serverClientId,
+  }) async {
     await ensureGoogleInitialized(
       clientId: clientId,
       serverClientId: serverClientId,
@@ -202,14 +216,20 @@ class AuthService {
       );
     }
 
-    final credential = GoogleAuthProvider.credential(idToken: idToken);
-    return _completeSignIn(
-      credential: credential,
-      provider: AuthProviderKind.google,
-    );
+    return GoogleAuthProvider.credential(idToken: idToken);
   }
 
   Future<AuthSignInResult> signInWithApple() async {
+    final apple = await _appleCredential();
+    return _completeSignIn(
+      credential: apple.credential,
+      provider: AuthProviderKind.apple,
+      fallbackDisplayName: apple.displayName,
+    );
+  }
+
+  Future<({AuthCredential credential, String? displayName})>
+      _appleCredential() async {
     final rawNonce = _randomNonce();
     final hashedNonce = sha256.convert(utf8.encode(rawNonce)).toString();
 
@@ -249,10 +269,9 @@ class AuthService {
       appleCredential.familyName ?? '',
     ].where((p) => p.trim().isNotEmpty).join(' ').trim();
 
-    return _completeSignIn(
+    return (
       credential: credential,
-      provider: AuthProviderKind.apple,
-      fallbackDisplayName: appleName.isEmpty ? null : appleName,
+      displayName: appleName.isEmpty ? null : appleName,
     );
   }
 
@@ -306,9 +325,112 @@ class AuthService {
         provider: provider,
       );
     } on FirebaseAuthException catch (e) {
+      // The same person signing in with their other provider: Firebase keeps
+      // one account per email address, so attach the new credential to the
+      // account that already exists rather than refusing.
+      if (e.code == 'account-exists-with-different-credential') {
+        return _linkToExistingAccount(error: e, attempted: provider);
+      }
+
+      if (e.code == 'operation-not-allowed') {
+        AppLog.auth.error('Provider not enabled', data: {
+          'provider': provider.name,
+        });
+        throw StateError(
+          '${_providerLabel(provider)} sign-in is not enabled for this Firebase '
+          'project. Turn it on under Authentication, Sign-in method.',
+        );
+      }
+
       AppLog.auth.error('Sign-in rejected', data: {'code': e.code});
       throw StateError(e.message ?? 'Firebase Auth failed (${e.code}).');
     }
+  }
+
+  static String _providerLabel(AuthProviderKind provider) =>
+      switch (provider) {
+        AuthProviderKind.google => 'Google',
+        AuthProviderKind.apple => 'Apple',
+      };
+
+  /// Attaches a second sign-in method to the account that already owns this
+  /// email, so signing up with Google and later using Apple lands on one
+  /// account instead of two.
+  ///
+  /// Only works when both providers report the same address. Apple's Hide My
+  /// Email returns a privaterelay.appleid.com alias, which can never match a
+  /// Google address, so that case stays a separate account by design.
+  Future<AuthSignInResult> _linkToExistingAccount({
+    required FirebaseAuthException error,
+    required AuthProviderKind attempted,
+  }) async {
+    final pending = error.credential;
+    if (pending == null) {
+      throw StateError(
+        error.message ?? 'This email already uses a different sign-in method.',
+      );
+    }
+
+    // There are only two providers, so the account must use the other one.
+    final existing = attempted == AuthProviderKind.apple
+        ? AuthProviderKind.google
+        : AuthProviderKind.apple;
+
+    AppLog.auth.info('Email already registered, linking providers', {
+      'attempted': attempted.name,
+      'existing': existing.name,
+    });
+
+    final AuthCredential existingCredential;
+    String? fallbackName;
+    if (existing == AuthProviderKind.google) {
+      existingCredential = await _googleCredential();
+    } else {
+      final apple = await _appleCredential();
+      existingCredential = apple.credential;
+      fallbackName = apple.displayName;
+    }
+
+    final result = await _auth.signInWithCredential(existingCredential);
+    final user = result.user;
+    if (user == null) {
+      throw StateError('Could not open the existing account.');
+    }
+
+    try {
+      await user.linkWithCredential(pending);
+      AppLog.auth.success('Linked sign-in method', {
+        'added': attempted.name,
+        'uid': AppLog.redact(user.uid),
+      });
+    } on FirebaseAuthException catch (e) {
+      // Already attached is a success for our purposes.
+      if (e.code != 'provider-already-linked' &&
+          e.code != 'credential-already-in-use') {
+        rethrow;
+      }
+      AppLog.auth.debug('Provider already linked', {'code': e.code});
+    }
+
+    if ((user.displayName?.trim().isEmpty ?? true) &&
+        fallbackName != null &&
+        fallbackName.isNotEmpty) {
+      try {
+        await user.updateDisplayName(fallbackName);
+        await user.reload();
+      } catch (e) {
+        AppLog.auth.warn('Display name not saved', {'error': e});
+      }
+    }
+
+    startTokenAutoRefresh();
+    await _persistToken(_auth.currentUser ?? user, forceRefresh: true);
+
+    return AuthSignInResult(
+      credential: result,
+      isNewUser: false,
+      provider: attempted,
+    );
   }
 
   /// Signs out only when the user asks for it.
