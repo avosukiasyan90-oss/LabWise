@@ -573,5 +573,8 @@
   "doseTimeEvening": "Вечер",
   "doseTimeNight": "Ночь",
   "doseTimeSet": "Выбрать время",
-  "doseTimeAlready": "Это время уже добавлено."
+  "doseTimeAlready": "Это время уже добавлено.",
+  "languageFrench": "Français",
+  "languageSpanish": "Español",
+  "languageGerman": "Deutsch"
 }

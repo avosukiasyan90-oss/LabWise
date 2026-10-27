@@ -1,0 +1,719 @@
+{
+  "@@locale": "fr",
+  "appTitle": "LabWise Health",
+  "cancel": "Annuler",
+  "ok": "OK",
+  "delete": "Supprimer",
+  "save": "Enregistrer",
+  "signOut": "Se déconnecter",
+  "tabAnalyze": "Analyser",
+  "tabHistory": "Historique",
+  "tabPlan": "Plan",
+  "tabProfile": "Profil",
+  "authTagline": "Connectez-vous une fois pour garder votre historique synchronisé sur tous vos appareils. Vous restez connecté jusqu'à ce que vous vous déconnectiez.",
+  "authWelcome": "Bienvenue",
+  "authExplainer": "La connexion crée automatiquement votre compte si vous êtes nouveau, ou vous reconnecte si vous utilisez déjà LabWise Health.",
+  "continueWithGoogle": "Continuer avec Google",
+  "continueWithApple": "Continuer avec Apple",
+  "signingIn": "Connexion…",
+  "authPrivacyNote": "Vos analyses restent privées, liées à votre compte.",
+  "signInCanceled": "Connexion annulée.",
+  "signInFailed": "Connexion impossible avec {provider}. {detail}",
+  "@signInFailed": {
+    "placeholders": {
+      "provider": {
+        "type": "String"
+      },
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "firebaseNotConfigured": "Firebase n'est pas encore configuré sur cette machine.",
+  "firebaseSetupIntro": "Créez le projet Firebase LabWise Health et activez la connexion Google, puis lancez :",
+  "firebaseSetupFooter": "Cela relie Auth, Firestore et Storage pour synchroniser l'historique entre appareils.",
+  "signOutQuestion": "Se déconnecter ?",
+  "signOutBody": "Vous pouvez vous reconnecter à tout moment. L'historique reste enregistré sur votre compte.",
+  "cloudSyncFailed": "Synchronisation impossible. Affichage de la copie locale.",
+  "analyzeIntro": "Nous lisons l'analyse complète, extrayons chaque valeur et expliquons chacune avec des informations claires, une description et des conseils.",
+  "howItWorks": "Comment ça marche",
+  "stepUploadTitle": "Importer",
+  "stepUploadBody": "Choisissez une analyse PDF ou Word depuis votre appareil.",
+  "stepUnderstandTitle": "Comprendre",
+  "stepUnderstandBody": "Chaque valeur reçoit une information, une description et un conseil.",
+  "stepActTitle": "Agir",
+  "stepActBody": "Examinez d'abord les points à surveiller, puis confirmez avec votre médecin.",
+  "filesStayOnDevice": "Vos fichiers restent sur cet appareil. L'historique est enregistré localement.",
+  "uploadTitle": "Importer une analyse",
+  "uploadSubtitle": "PDF ou Word (.docx). Nous lisons tout le document et expliquons chaque résultat.",
+  "chooseFile": "Choisir un fichier",
+  "readingReport": "Lecture de votre analyse…",
+  "readingReportSubtitle": "Extraction des marqueurs et préparation des conseils",
+  "alreadyUploadedTitle": "Déjà importé",
+  "alreadyUploadedBody": "« {fileName} » est déjà dans votre historique. Ouvrez l'historique pour la consulter au lieu d'importer un doublon.",
+  "@alreadyUploadedBody": {
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "viewHistory": "Voir l'historique",
+  "errorReadFile": "Impossible de lire ce fichier. Veuillez réessayer.",
+  "errorScannedPdf": "Ce PDF semble scanné. Essayez un PDF contenant du texte ou un export Word.",
+  "errorGeneric": "Une erreur est survenue pendant la lecture. Essayez un autre PDF ou DOCX.",
+  "errorUnsupportedType": "Type de fichier non pris en charge.",
+  "historyTitle": "Historique",
+  "historySummary": "{reports, plural, =1{1 analyse} other{{reports} analyses}} dans {folders, plural, =1{1 dossier} other{{folders} dossiers}}.",
+  "@historySummary": {
+    "placeholders": {
+      "reports": {
+        "type": "int"
+      },
+      "folders": {
+        "type": "int"
+      }
+    }
+  },
+  "reportCount": "{count, plural, =1{1 analyse} other{{count} analyses}}",
+  "@reportCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "needAttentionSuffix": "{count} à surveiller",
+  "@needAttentionSuffix": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noReportsTitle": "Aucune analyse pour l'instant",
+  "noReportsBody": "Importez un PDF ou un fichier Word depuis l'onglet Analyser. Les analyses sont classées automatiquement par type.",
+  "deleteReportTitle": "Supprimer l'analyse ?",
+  "deleteReportBody": "Retirer « {fileName} » de l'historique ?",
+  "@deleteReportBody": {
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "categoryBloodCount": "Numération sanguine",
+  "categoryBloodCountDesc": "Hémogrammes complets — cellules, hémoglobine, plaquettes",
+  "categoryBiochemistry": "Biochimie sanguine",
+  "categoryBiochemistryDesc": "Glucose, cholestérol, marqueurs hépatiques et rénaux",
+  "categoryHormones": "Hormones",
+  "categoryHormonesDesc": "Thyroïde et autres bilans hormonaux",
+  "categoryUrinalysis": "Analyses d'urine",
+  "categoryUrinalysisDesc": "Bandelettes urinaires et microscopie",
+  "categoryUrogenital": "Urogénital",
+  "categoryUrogenitalDesc": "Microscopie de frottis et panels PCR",
+  "categoryOther": "Autres analyses",
+  "categoryOtherDesc": "Analyses que nous n'avons pas encore pu classer",
+  "categoryInfection": "Tests d'infection",
+  "categoryInfectionDesc": "Helicobacter et autres dépistages d'infection",
+  "yourResults": "Vos résultats",
+  "done": "Terminé",
+  "suggestions": "Conseils",
+  "needsAttention": "À surveiller",
+  "needsAttentionSubtitle": "Valeurs hors des plages habituelles, avec des conseils clairs.",
+  "allFindings": "Tous les résultats",
+  "otherFindings": "Autres résultats",
+  "everyPointRead": "Chaque valeur lue dans votre document.",
+  "noStructuredPoints": "Aucune valeur structurée n'a été extraite. Votre fichier est enregistré dans l'historique pour que vous puissiez le rouvrir.",
+  "resultsDisclaimer": "Informations pédagogiques uniquement — pas un avis médical. Confirmez toujours vos décisions avec un médecin.",
+  "pointsRead": "Valeurs lues",
+  "needAttentionLabel": "À surveiller",
+  "documentDetails": "Détails du document",
+  "fieldExam": "Examen",
+  "fieldClinic": "Clinique",
+  "fieldPatient": "Patient",
+  "fieldReportNumber": "N° d'analyse",
+  "fieldSampleDate": "Date de prélèvement",
+  "fieldDoctor": "Médecin",
+  "fieldMethod": "Méthode",
+  "fieldAddress": "Adresse",
+  "fieldPhone": "Téléphone",
+  "fieldEmail": "E-mail",
+  "fieldLabLicence": "Licence du labo",
+  "healthNeedsReview": "À revoir",
+  "healthLookingGood": "Tout va bien",
+  "healthSomeAttention": "Attention requise",
+  "healthFollowUp": "Suivi recommandé",
+  "markerInformation": "Information",
+  "markerDescription": "Description",
+  "markerSuggestion": "Conseil",
+  "markerCode": "Code : {code}",
+  "@markerCode": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "markerRef": "Réf. : {range}",
+  "@markerRef": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "statusNormal": "Normal",
+  "statusLow": "Bas",
+  "statusHigh": "Élevé",
+  "statusUnknown": "Commençons",
+  "attachedFile": "Fichier joint",
+  "attachedFileUnavailable": "Fichier indisponible au téléchargement",
+  "attachedFileOnDevice": "Enregistré sur cet appareil",
+  "attachedFileSynced": "Synchronisé depuis votre compte",
+  "downloadFile": "Télécharger le fichier",
+  "preparing": "Préparation…",
+  "attachedFileMissing": "Le fichier joint n'est pas disponible.",
+  "attachedFileExportFailed": "Export impossible. Veuillez réessayer.",
+  "profileTitle": "Profil",
+  "profileSubtitle": "Vos informations Google restent inchangées. Les données de santé sont facultatives et servent uniquement à mieux contextualiser.",
+  "googleAccount": "Compte Google",
+  "fieldName": "Prénom",
+  "fieldSurname": "Nom",
+  "managedByGoogle": "Géré par votre compte",
+  "healthDetails": "Données de santé",
+  "updateAnytime": "Vous pouvez les modifier à tout moment.",
+  "fieldWeight": "Poids",
+  "fieldHeight": "Taille",
+  "fieldAge": "Âge",
+  "fieldCountry": "Pays",
+  "unitKg": "kg",
+  "unitCm": "cm",
+  "unitYearsOld": "ans",
+  "selectCountry": "Choisir un pays",
+  "searchCountry": "Rechercher un pays",
+  "noCountryMatch": "Aucun pays ne correspond à « {query} ».",
+  "@noCountryMatch": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "bmiNote": "IMC {bmi} — estimation pédagogique uniquement.",
+  "@bmiNote": {
+    "placeholders": {
+      "bmi": {
+        "type": "String"
+      }
+    }
+  },
+  "profileSaved": "Profil enregistré",
+  "profileSaveFailed": "Enregistrement impossible. Réessayez.",
+  "validationWeight": "Indiquez un poids entre 2 et 400 kg.",
+  "validationHeight": "Indiquez une taille entre 40 et 260 cm.",
+  "validationAge": "Indiquez un âge entre 1 et 120 ans.",
+  "language": "Langue",
+  "languageSubtitle": "Le changement s'applique à toute l'application.",
+  "languageEnglish": "English",
+  "languageRussian": "Русский",
+  "setupWelcomeNamed": "Bienvenue, {name}",
+  "@setupWelcomeNamed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "setupWelcome": "Bienvenue dans LabWise",
+  "setupBody": "Ajoutez quelques données de santé pour mieux contextualiser vos résultats. Vous pouvez passer cette étape et la compléter plus tard depuis le profil.",
+  "saveAndContinue": "Enregistrer et continuer",
+  "skipForNow": "Passer pour l'instant",
+  "setupSaveFailed": "Enregistrement impossible. Vous pourrez l'ajouter plus tard.",
+  "planTitle": "Votre plan",
+  "planHeadlineUnder": "{who}, voici un plan pour prendre du poids régulièrement et garder de l'énergie.",
+  "@planHeadlineUnder": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "planHeadlineHealthy": "{who}, voici un plan pour rester dans votre plage saine et garder la forme.",
+  "@planHeadlineHealthy": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "planHeadlineAbove": "{who}, voici un plan pour affiner progressivement sans avoir faim.",
+  "@planHeadlineAbove": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "planHeadlineWellAbove": "{who}, voici un plan doux et respectueux des articulations pour commencer à perdre du poids.",
+  "@planHeadlineWellAbove": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "planHeadlineFallback": "Ajoutez votre taille et votre poids pour débloquer un plan personnalisé.",
+  "planWhoFallback": "Voici",
+  "bmiUnder": "Sous la plage",
+  "bmiHealthy": "Plage saine",
+  "bmiAbove": "Au-dessus de la plage",
+  "bmiWellAbove": "Bien au-dessus",
+  "bmiProfileNeeded": "Profil requis",
+  "targetsTuned": "Les objectifs ci-dessous sont adaptés à cette plage.",
+  "metricKcal": "kcal / jour",
+  "metricWater": "eau",
+  "metricSteps": "pas",
+  "eatingWindow": "Fenêtre des repas",
+  "eatingWindowSubtitle": "Mangez entre {window}",
+  "@eatingWindowSubtitle": {
+    "placeholders": {
+      "window": {
+        "type": "String"
+      }
+    }
+  },
+  "eatingWindowFallback": "Quand manger dans la journée",
+  "movement": "Activité",
+  "movementSubtitle": "Sports choisis selon votre corps et votre âge",
+  "dailyHabits": "Habitudes quotidiennes",
+  "dailyHabitsSubtitle": "De petites choses qui s'additionnent",
+  "fromYourReports": "D'après vos analyses",
+  "fromYourReportsSubtitle": "Ajusté selon les valeurs à surveiller",
+  "planDisclaimer": "Conseils généraux de bien-être basés sur les données que vous avez saisies — pas un avis médical. Consultez un médecin avant de modifier votre alimentation, votre activité ou vos traitements.",
+  "planSetupTitle": "Parlez-nous un peu plus de vous",
+  "planSetupBody": "Ajoutez votre {fields} dans le profil et cet onglet construira les horaires de repas, les suggestions de sport et les objectifs quotidiens autour de vous.",
+  "@planSetupBody": {
+    "placeholders": {
+      "fields": {
+        "type": "String"
+      }
+    }
+  },
+  "openProfile": "Ouvrir le profil",
+  "planMissingHint": "Ajoutez votre {fields} pour un plan plus précis.",
+  "@planMissingHint": {
+    "placeholders": {
+      "fields": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldWeightLower": "poids",
+  "fieldHeightLower": "taille",
+  "fieldAgeLower": "âge",
+  "mealBreakfast": "Petit-déjeuner",
+  "mealBreakfastIdea": "Protéines et glucides lents — œufs ou yaourt avec flocons d'avoine et fruits.",
+  "mealLunch": "Déjeuner",
+  "mealLunchIdea": "La moitié de l'assiette en légumes, une paume de protéines, un poing de céréales.",
+  "mealSnack": "Collation",
+  "mealSnackIdea": "Noix, fromage ou smoothie pour ajouter des calories sans ballonnements.",
+  "mealLightSnack": "Collation légère",
+  "mealLightSnackIdea": "Un fruit avec une poignée de noix si vous ressentez un creux.",
+  "mealDinner": "Dîner",
+  "mealDinnerIdeaLight": "Plus léger et plus tôt — légumes, protéines maigres, peu d'huile.",
+  "mealDinnerIdeaBalanced": "Assiette équilibrée, terminez environ 2 heures avant le coucher.",
+  "mealKitchenClosed": "Cuisine fermée",
+  "mealKitchenClosedIdea": "Eau ou tisane uniquement après cette heure — cela protège votre sommeil.",
+  "activityWalking": "Marche",
+  "activityWalkingSchedule": "30–40 min, presque tous les jours",
+  "activityWalkingWhy": "Le moyen le plus simple de brûler des graisses sans solliciter genoux et hanches.",
+  "activitySwimming": "Natation ou aquagym",
+  "activitySwimmingSchedule": "2× par semaine",
+  "activitySwimmingWhy": "L'eau porte votre poids, les articulations restent à l'aise.",
+  "activityLightStrength": "Circuit de renforcement léger",
+  "activityLightStrengthSchedule": "2× par semaine, 20 min",
+  "activityLightStrengthWhy": "Préserve le muscle pendant la perte de graisse, ce qui protège le métabolisme.",
+  "activityBriskWalk": "Marche rapide ou vélo",
+  "activityBriskWalkSchedule": "35 min, 5× par semaine",
+  "activityBriskWalkWhy": "Le cardio régulier est le levier le plus fiable pour perdre de la graisse.",
+  "activityStrength": "Renforcement musculaire",
+  "activityStrengthSchedule2": "2× par semaine",
+  "activityStrengthSchedule3": "3× par semaine",
+  "activityStrengthWhyMuscle": "Développe le muscle, donc vous brûlez plus au repos.",
+  "activityStrengthWhyBone": "Protège la densité osseuse et la masse musculaire avec l'âge.",
+  "activityStrengthWhyGain": "Transforme les calories supplémentaires en muscle, pas seulement en graisse.",
+  "activityPostMeal": "Marche après le repas",
+  "activityPostMealSchedule": "10–15 min après le dîner",
+  "activityPostMealWhy": "Atténue le pic de glycémie de votre repas le plus copieux.",
+  "activityEasyWalk": "Marche tranquille",
+  "activityEasyWalkSchedule": "20–30 min par jour",
+  "activityEasyWalkWhy": "Entretient le cœur sans brûler les calories dont vous avez besoin.",
+  "activityMixedCardio": "Cardio varié",
+  "activityMixedCardioSchedule": "150 min par semaine",
+  "activityMixedCardioWhy": "Correspond au niveau d'activité associé aux meilleurs marqueurs cardiaques.",
+  "activityEnjoy": "Quelque chose que vous aimez",
+  "activityEnjoySchedule": "1× par semaine",
+  "activityEnjoyWhy": "Football, danse, randonnée — le plaisir est ce qui fait tenir sur la durée.",
+  "activityBalance": "Équilibre et mobilité",
+  "activityBalanceSchedule": "10 min par jour",
+  "activityBalanceWhy": "Réduit le risque de chute et garde les articulations souples.",
+  "habitWater": "Buvez environ {litres} L d'eau dans la journée.",
+  "@habitWater": {
+    "placeholders": {
+      "litres": {
+        "type": "String"
+      }
+    }
+  },
+  "habitSleep": "Visez 7 à 9 heures de sommeil à des horaires réguliers.",
+  "habitSugar": "Réservez les boissons sucrées aux occasions spéciales.",
+  "habitFrequentMeals": "Mangez quelque chose toutes les 3 à 4 heures pour ne jamais être à jeun.",
+  "habitCalcium": "Intégrez des aliments riches en calcium et en vitamine D la plupart des jours.",
+  "habitStand": "Levez-vous et bougez 2 minutes par heure passée assis.",
+  "noteCholesterol": "Votre cholestérol mérite attention — privilégiez l'avoine, les légumineuses et l'huile d'olive aux fritures.",
+  "noteHdl": "Un HDL bas répond le mieux à une activité aérobie régulière, priorisez donc les séances de cardio.",
+  "noteTriglycerides": "Des triglycérides élevés s'améliorent vite en supprimant boissons sucrées et alcool.",
+  "noteGlucose": "La glycémie mérite attention — la marche après les repas compte plus que tout le reste ici.",
+  "noteHemoglobin": "L'hémoglobine est hors plage — intégrez des aliments riches en fer et parlez-en à votre médecin.",
+  "noteVitaminD": "La vitamine D est basse — la lumière du jour et un complément conseillé par un médecin y remédient généralement.",
+  "noteThyroid": "Les valeurs thyroïdiennes sont à revoir ; gardez une activité douce jusqu'à l'avis de votre médecin.",
+  "noteHPylori": "Votre test Helicobacter est positif — suivez le traitement prescrit par votre médecin et gardez des repas réguliers et légers entre-temps.",
+  "comparisonTitle": "Comparé à votre dernière analyse",
+  "trendBetter": "Mieux que la dernière fois",
+  "trendWorse": "À regarder de plus près",
+  "trendSteady": "Stable",
+  "trendBetterBody": "Davantage de vos valeurs se situent dans leur plage saine qu'auparavant.",
+  "trendWorseBody": "Quelques valeurs sont sorties de leur plage depuis votre analyse précédente.",
+  "trendSteadyBody": "Vos valeurs se situent à peu près au même niveau que la dernière fois.",
+  "previousTestOn": "Analyse précédente {date}",
+  "@previousTestOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreBetterBy": "+{points} pts",
+  "@scoreBetterBy": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreWorseBy": "{points} pts",
+  "@scoreWorseBy": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreNoChange": "Aucun changement",
+  "inRangeNow": "{current} sur {total} dans la plage",
+  "@inRangeNow": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "wasInRange": "était {previous} sur {total}",
+  "@wasInRange": {
+    "placeholders": {
+      "previous": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "countImproved": "{count, plural, one{{count} amélioré} other{{count} améliorés}}",
+  "@countImproved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countWorsened": "{count, plural, one{{count} dégradé} other{{count} dégradés}}",
+  "@countWorsened": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countSteady": "{count, plural, one{{count} stable} other{{count} stables}}",
+  "@countSteady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "whatChanged": "Ce qui a changé",
+  "whatChangedSubtitle": "Valeurs mesurées dans les deux analyses",
+  "backInRange": "De retour dans la plage",
+  "leftRange": "Sorti de la plage",
+  "showAllChanges": "Afficher les {count} valeurs",
+  "@showAllChanges": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "showFewerChanges": "Afficher seulement ce qui a bougé",
+  "updatedBadge": "Mis à jour",
+  "replacedEarlierVersion": "A remplacé votre import du {date}",
+  "@replacedEarlierVersion": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "markersCount": "{count, plural, one{{count} marqueur} other{{count} marqueurs}}",
+  "@markersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "toReviewCount": "{count} à revoir",
+  "@toReviewCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "folderTrendImproved": "{count} en amélioration",
+  "@folderTrendImproved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activityTitle": "Calendrier d'activité",
+  "activitySubtitle": "Touchez un jour pour voir ce que vous avez fait",
+  "activityLoading": "Lecture de votre activité…",
+  "activityNoneRecorded": "Aucune activité enregistrée ce jour-là.",
+  "activityDistance": "distance",
+  "activityMinutes": "min actives",
+  "activityWalkRun": "Marche et course",
+  "activityCycling": "Vélo",
+  "activitySessions": "Séances",
+  "activityKindWalking": "Marche",
+  "activityKindRunning": "Course",
+  "activityKindCycling": "Vélo",
+  "activityKindOther": "Séance",
+  "activityDurationMinutes": "{count} min",
+  "@activityDurationMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activityConnectTitle": "Connectez votre activité",
+  "activityConnectBody": "Autorisez LabWise à lire vos pas, votre marche, votre course et votre vélo pour que le calendrier affiche chaque jour. L'app lit uniquement — rien n'est jamais écrit en retour et les données restent sur votre téléphone.",
+  "activityConnectButton": "Connecter",
+  "activityHealthConnectBody": "Android a besoin de l'application Health Connect pour partager votre activité. Installez-la ou mettez-la à jour, puis revenez ici.",
+  "activityInstallHealthConnect": "Obtenir Health Connect",
+  "activityRestartNeeded": "Le suivi d'activité vient d'être installé. Fermez complètement l'application et rouvrez-la pour terminer la configuration — un redémarrage à chaud ne suffit pas.",
+  "activityToday": "Aujourd'hui",
+  "activityOpenCalendar": "Calendrier",
+  "activityConnectShort": "Lecture seule, reste sur votre téléphone",
+  "targetsTitle": "Vos objectifs",
+  "targetsSubtitle": "D'où vient chaque chiffre, et pourquoi il compte",
+  "targetsTapHint": "D'où viennent ces chiffres ?",
+  "targetsInputsTitle": "Calculé à partir de",
+  "targetsInputsBody": "Poids {weight} kg · Taille {height} cm · Âge {age}",
+  "@targetsInputsBody": {
+    "placeholders": {
+      "weight": {
+        "type": "String"
+      },
+      "height": {
+        "type": "String"
+      },
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "targetsInputsNote": "Modifiez l'un de ces éléments dans le profil et tous les objectifs ci-dessous se mettent à jour.",
+  "targetBmiTitle": "Indice de masse corporelle",
+  "targetBmiWhat": "Votre poids divisé par votre taille au carré. Un seul chiffre pour décrire leur rapport.",
+  "targetBmiWhy": "Tous les autres objectifs de cet écran sont ajustés selon votre plage, c'est donc un point de départ plutôt qu'une note en soi.",
+  "targetBmiBands": "Moins de 18,5 : sous la plage · 18,5 à 25 : sain · 25 à 30 : au-dessus · 30 et plus : bien au-dessus.",
+  "targetBmiCaveat": "L'IMC ne distingue pas le muscle de la graisse : les sportifs affichent souvent une valeur élevée tout en étant en parfaite santé. C'est un repère, pas un verdict.",
+  "targetCaloriesTitle": "Calories par jour",
+  "targetCaloriesWhat": "Une estimation de ce que votre corps dépense lors d'une journée peu active, ajustée vers votre objectif.",
+  "targetCaloriesWhy": "Manger à peu près cette quantité maintient le poids. L'ajustement est volontairement modeste pour une progression douce plutôt que punitive.",
+  "targetCaloriesHow": "Calculé avec l'équation de Mifflin-St Jeor à partir de votre poids, votre taille et votre âge, multiplié par 1,45 pour l'activité quotidienne. L'application ne demandant pas votre sexe, le résultat est une moyenne entre les formules masculine et féminine, avec un écart possible d'environ 80 kcal.",
+  "targetCaloriesAdjustUnder": "300 kcal ont été ajoutées pour vous aider à prendre du poids régulièrement.",
+  "targetCaloriesAdjustHealthy": "Aucun ajustement — c'est votre niveau de maintien.",
+  "targetCaloriesAdjustAbove": "350 kcal ont été retirées pour une perte progressive.",
+  "targetCaloriesAdjustWellAbove": "500 kcal ont été retirées pour une perte régulière et durable.",
+  "targetWaterTitle": "Eau",
+  "targetWaterWhat": "Environ 33 ml par kilogramme de poids, c'est pourquoi un corps plus lourd obtient un chiffre plus élevé.",
+  "targetWaterWhy": "Un léger manque de liquide se manifeste par de la fatigue et des maux de tête bien avant la soif, et fausse plusieurs marqueurs sanguins.",
+  "targetWaterCaveat": "Buvez davantage par forte chaleur, pendant l'effort ou en cas de maladie. L'alimentation y contribue aussi, tout ne vient donc pas du verre.",
+  "targetStepsTitle": "Pas",
+  "targetStepsWhat": "Un objectif quotidien d'activité, à partir de 8 000 et ajusté à votre situation.",
+  "targetStepsWhy": "La marche régulière agit plus sur la tension, la glycémie et l'humeur que presque toute autre habitude, et ne demande aucun équipement.",
+  "targetStepsHow": "Relevé pour un IMC au-dessus de la plage, abaissé de nouveau bien au-dessus pour ne pas surcharger les articulations au début, réduit après 60 ans et relevé avant 30 ans.",
+  "targetsClinicianTitle": "Ceci n'est pas un avis médical",
+  "targetsClinicianBody": "Ce sont des estimations générales de bien-être calculées sur votre téléphone à partir de trois chiffres que vous avez saisis. Elles ignorent tout de vos antécédents, de vos traitements, d'une grossesse ou de vos pathologies. Parlez-en à un médecin avant d'agir.",
+  "statusGood": "Tout va bien",
+  "statusWatch": "À garder à l'œil",
+  "statusAttention": "Attention requise",
+  "statusUnknownBody": "Ajoutez vos données ou importez une analyse pour voir où vous en êtes.",
+  "statusFlagged": "{count, plural, one{{count} valeur à revoir} other{{count} valeurs à revoir}}",
+  "@statusFlagged": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statusAllClear": "Les {count} valeurs sont dans la plage",
+  "@statusAllClear": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statusNoReport": "Pas encore d'analyse",
+  "statusBmi": "IMC {bmi}",
+  "@statusBmi": {
+    "placeholders": {
+      "bmi": {
+        "type": "String"
+      }
+    }
+  },
+  "statusAddDetails": "Ajoutez votre {fields}",
+  "@statusAddDetails": {
+    "placeholders": {
+      "fields": {
+        "type": "String"
+      }
+    }
+  },
+  "statusTitle": "Votre santé en ce moment",
+  "tabMeds": "Médicaments",
+  "medsTitle": "Médicaments",
+  "medsSubtitlePending": "{taken} sur {total} pris aujourd'hui",
+  "@medsSubtitlePending": {
+    "placeholders": {
+      "taken": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "medsSubtitleAllDone": "Tout est pris pour aujourd'hui",
+  "medsSubtitleNoneToday": "Rien de prévu aujourd'hui",
+  "medsEmptyTitle": "Aucun médicament pour l'instant",
+  "medsEmptyBody": "Ajoutez un comprimé, une vitamine ou un complément et l'application vous rappellera l'heure de la prise.",
+  "medsAdd": "Ajouter un médicament",
+  "medsEdit": "Modifier le médicament",
+  "medsFieldName": "Nom",
+  "medsFieldNameHint": "Vitamine D, Oméprazole…",
+  "medsFieldCount": "Quantité par prise",
+  "medsFieldNotes": "Notes (facultatif)",
+  "medsFieldFrequency": "Fréquence",
+  "medsFieldTimes": "Heures de rappel",
+  "medsAddTime": "Ajouter une heure",
+  "medsFieldStart": "Début",
+  "medsFieldEnd": "Fin (facultatif)",
+  "medsNoEnd": "Sans date de fin",
+  "medsFrequencyDaily": "Tous les jours",
+  "medsFrequencyEveryOther": "Un jour sur deux",
+  "medsFrequencyWeekly": "Chaque semaine",
+  "medsFrequencyAsNeeded": "Seulement si besoin",
+  "medsSave": "Enregistrer",
+  "medsDelete": "Supprimer",
+  "medsDeleteTitle": "Supprimer ce médicament ?",
+  "medsDeleteBody": "{name} et ses rappels seront supprimés.",
+  "@medsDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "medsStateOverdue": "Manqué",
+  "medsStateUpcoming": "À venir",
+  "medsStateDone": "Pris",
+  "medsStateInactive": "Pas aujourd'hui",
+  "medsDoseCount": "{count, plural, one{{count} comprimé} other{{count} comprimés}}",
+  "@medsDoseCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "medsTakenOf": "{taken}/{total}",
+  "@medsTakenOf": {
+    "placeholders": {
+      "taken": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "medsNextDose": "Prochaine prise à {time}",
+  "@medsNextDose": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "medsNextOn": "Prochaine prise le {date}",
+  "@medsNextOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "medsAsNeededHint": "Pris uniquement si besoin — sans rappel",
+  "medsMarkTaken": "Marquer comme pris",
+  "medsUndo": "Annuler",
+  "medsNeedsName": "Donnez un nom au médicament.",
+  "medsNeedsTime": "Ajoutez au moins une heure de rappel.",
+  "medsNotificationsOffTitle": "Les rappels sont désactivés",
+  "medsNotificationsOffBody": "Autorisez les notifications pour que l'application vous rappelle l'heure de la prise.",
+  "medsEnableNotifications": "Autoriser les notifications",
+  "medsStateDueNow": "C'est l'heure",
+  "doseTimeTitle": "Heure du rappel",
+  "doseTimeQuick": "Heures courantes",
+  "doseTimeMorning": "Matin",
+  "doseTimeMidday": "Midi",
+  "doseTimeEvening": "Soir",
+  "doseTimeNight": "Nuit",
+  "doseTimeSet": "Définir l'heure",
+  "doseTimeAlready": "Cette heure est déjà ajoutée.",
+  "languageFrench": "Français",
+  "languageSpanish": "Español",
+  "languageGerman": "Deutsch"
+}

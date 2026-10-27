@@ -2382,6 +2382,24 @@ abstract class AppL10n {
   /// In en, this message translates to:
   /// **'That time is already added.'**
   String get doseTimeAlready;
+
+  /// No description provided for @languageFrench.
+  ///
+  /// In en, this message translates to:
+  /// **'Français'**
+  String get languageFrench;
+
+  /// No description provided for @languageSpanish.
+  ///
+  /// In en, this message translates to:
+  /// **'Español'**
+  String get languageSpanish;
+
+  /// No description provided for @languageGerman.
+  ///
+  /// In en, this message translates to:
+  /// **'Deutsch'**
+  String get languageGerman;
 }
 
 class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {

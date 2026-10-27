@@ -316,6 +316,9 @@ class _LanguageCard extends StatelessWidget {
   String _label(AppL10n l10n, AppLanguage language) => switch (language) {
         AppLanguage.english => l10n.languageEnglish,
         AppLanguage.russian => l10n.languageRussian,
+        AppLanguage.french => l10n.languageFrench,
+        AppLanguage.spanish => l10n.languageSpanish,
+        AppLanguage.german => l10n.languageGerman,
       };
 
   @override

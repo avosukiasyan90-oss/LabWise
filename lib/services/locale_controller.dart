@@ -4,7 +4,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Languages LabWise ships with. English is the default.
 enum AppLanguage {
   english('en'),
-  russian('ru');
+  russian('ru'),
+  french('fr'),
+  spanish('es'),
+  german('de');
 
   const AppLanguage(this.code);
 

@@ -1392,4 +1392,13 @@ class AppL10nRu extends AppL10n {
 
   @override
   String get doseTimeAlready => 'Это время уже добавлено.';
+
+  @override
+  String get languageFrench => 'Français';
+
+  @override
+  String get languageSpanish => 'Español';
+
+  @override
+  String get languageGerman => 'Deutsch';
 }

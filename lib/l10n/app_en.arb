@@ -712,5 +712,8 @@
   "doseTimeEvening": "Evening",
   "doseTimeNight": "Night",
   "doseTimeSet": "Set time",
-  "doseTimeAlready": "That time is already added."
+  "doseTimeAlready": "That time is already added.",
+  "languageFrench": "Français",
+  "languageSpanish": "Español",
+  "languageGerman": "Deutsch"
 }

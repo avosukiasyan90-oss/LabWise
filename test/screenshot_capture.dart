@@ -42,26 +42,43 @@ const devices = [
   Device('ipad-13', Size(2064, 2752), 2),
 ];
 
+/// Every weight google_fonts might ask for. Registering the variable font
+/// under each name lets the real theme resolve without a download.
+const _variants = [
+  'regular', 'w100', 'w200', 'w300', 'w400', 'w500', 'w600', 'w700',
+  'w800', 'w900', 'italic',
+];
+
 Future<void> loadFonts() async {
   // google_fonts would try to download these; registering them by the exact
   // family names it asks for lets the real theme render offline.
-  const families = {
-    'Fraunces': ['regular', 'w500', 'w600', 'w700'],
-    'SourceSans3': ['regular', 'w500', 'w600', 'w700'],
-  };
   final files = {
     'Fraunces': '.screenshots/fonts/Fraunces.ttf',
     'SourceSans3': '.screenshots/fonts/SourceSans3.ttf',
   };
 
-  for (final entry in families.entries) {
-    final bytes = File(files[entry.key]!).readAsBytesSync();
-    for (final variant in entry.value) {
+  for (final entry in files.entries) {
+    final bytes = File(entry.value).readAsBytesSync();
+    for (final variant in _variants) {
       final loader = FontLoader('${entry.key}_$variant')
         ..addFont(Future.value(ByteData.view(bytes.buffer)));
       await loader.load();
     }
   }
+
+  // Without this every Icon renders as an empty box: the test environment
+  // does not bundle the icon font.
+  const iconFont =
+      '/Users/avosukiasyan/fvm/versions/stable/bin/cache/artifacts/'
+      'material_fonts/MaterialIcons-Regular.otf';
+  final icons = File(iconFont);
+  if (icons.existsSync()) {
+    final bytes = icons.readAsBytesSync();
+    await (FontLoader('MaterialIcons')
+          ..addFont(Future.value(ByteData.view(bytes.buffer))))
+        .load();
+  }
+
   GoogleFonts.config.allowRuntimeFetching = false;
 }
 
@@ -221,8 +238,11 @@ Future<void> capture(
     ),
   );
 
-  // Settle the entry animations rather than capturing them mid-flight.
-  await tester.pumpAndSettle(const Duration(seconds: 2));
+  // Advance past the entry animations with fixed pumps. pumpAndSettle would
+  // never return here: several screens have deliberately looping animations.
+  await tester.pump();
+  await tester.pump(const Duration(milliseconds: 900));
+  await tester.pump(const Duration(milliseconds: 900));
 
   final boundary =
       key.currentContext!.findRenderObject()! as RenderRepaintBoundary;

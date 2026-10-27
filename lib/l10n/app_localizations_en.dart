@@ -1379,4 +1379,13 @@ class AppL10nEn extends AppL10n {
 
   @override
   String get doseTimeAlready => 'That time is already added.';
+
+  @override
+  String get languageFrench => 'Français';
+
+  @override
+  String get languageSpanish => 'Español';
+
+  @override
+  String get languageGerman => 'Deutsch';
 }
